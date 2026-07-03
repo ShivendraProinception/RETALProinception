@@ -28,6 +28,22 @@
     font-display: swap
 }
 
-.theme-entry body {
-    background: #000;
+@font-face {
+    font-family: 'SangBleu Kingdom';
+    src: url('https://cdn.jsdelivr.net/gh/ShivendraProinception/RETALProinception/Fonts/SangBleuKingdom-Regular-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.theme-entry {
+    font-family: 'SangBleu Kingdom', serif !important;
+}
+
+.theme-entry .SourceCode-Forms-Controls-Web-Control,
+.theme-entry .SourceCode-Forms-Controls-Web-Label,
+.theme-entry .SourceCode-Forms-Controls-Web-Button,
+.theme-entry input, 
+.theme-entry select, 
+.theme-entry textarea {
+    font-family: 'SangBleu Kingdom', serif !important;
 }

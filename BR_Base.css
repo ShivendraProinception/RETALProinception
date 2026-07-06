@@ -2,7 +2,6 @@
    1. CSS VARIABLES (COLORS & FONTS)
 ========================================= */
 :root {
-    /* Brand Colors (Retal Brand Guidelines ke hisaab se) */
     --color-primary: #9E6850;    /* Bronze / Brown Color */
     --primary-header-hover: #F3E9E3; /* Button hover ke liye dark shade */
     --retal-dark: #272829;       /* Text / Headings Dark Color */
@@ -12,7 +11,7 @@
 
     /* Font Variables */
     --font-title: '29LT Zarid Display Variable', 'SangBleu Kingdom', Georgia, serif;
-    --font-body: 'ABC Favorit Arabic Variable', 'Favorit', system-ui, -apple-system, Segoe UI, sans-serif;
+    --font-body: 'ABC Favorit Arabic Variable', 'Favorit', system-ui, apple-system, Segoe UI, sans-serif;
     --font-ar: 'ABC Favorit Arabic Variable', 'Zarid Display', system-ui, sans-serif;
 }
 

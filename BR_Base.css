@@ -64,6 +64,7 @@
 .theme-entry .SourceCode-Forms-Controls-Web-Button,
 .theme-entry input, 
 .theme-entry select, 
-.theme-entry textarea {
+.theme-entry textarea,
+.theme-entry p {
     font-family: 'Favorit', sans-serif !important;
 }

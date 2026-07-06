@@ -11,9 +11,9 @@
     --retal-white: #FFFFFF;
 
     /* Font Variables */
-    --font-title: 'SangBleu Kingdom', serif;
-    --font-body: 'Favorit', sans-serif;
-    --font-arabic: '29LT Zarid', serif;
+    --font-title: '29LT Zarid Display Variable', 'SangBleu Kingdom', Georgia, serif;
+    --font-body: 'ABC Favorit Arabic Variable', 'Favorit', system-ui, -apple-system, Segoe UI, sans-serif;
+    --font-ar: 'ABC Favorit Arabic Variable', 'Zarid Display', system-ui, sans-serif;
 }
 
 
@@ -95,14 +95,113 @@
 
 .theme-entry a[name="btnLanguage"]{
     color: var(--color-primary) !important;
+    margin-right: 10px !important;
     font-size: 16px;
     font-family: var(--font-arabic) !important;
     background-color: #ffffff !important;
-    border: solid #F3EFED !important;
+    border: solid 1px #F3EFED !important;
     border-radius: 0 !important;
 }
 
 .theme-entry a[name="btnLanguage"]:hover{
     background-color: var(--primary-header-hover) !important;
-    border: solid var(--color-primary) !important;
+    border: solid 1px var(--color-primary) !important;
+}
+
+
+.theme-entry .rfooter {
+    width: 100vw !important;
+    margin-inline: calc(50% - 50vw) !important;
+    margin-top: 58px !important;
+    margin-bottom: -64px !important;
+    background: #3a271e !important;
+    color: #e8ddd6 !important;
+}
+
+.theme-entry .rf-top {
+    max-width: 1040px !important;
+    margin: 0 auto !important;
+    padding: 54px 44px 36px !important;
+    display: grid !important;
+    grid-template-columns: 1.5fr 1fr 1.4fr !important;
+    gap: 40px !important;
+}
+
+.theme-entry .rf-logo {
+    height: 28px !important;
+    opacity: .95 !important;
+    margin-bottom: 18px !important;
+}
+
+.theme-entry .display {
+    font-family: '29LT Zarid Display Variable', 'SangBleu Kingdom', Georgia, serif !important;
+    font-weight: 500 !important;
+}
+
+.theme-entry .rf-slog {
+    font-size: 23px !important;
+    color: #fff !important;
+    line-height: 1.16 !important;
+    max-width: 250px !important;
+    margin-bottom: 20px !important;
+}
+
+.theme-entry .rf-social {
+    display: flex !important;
+    gap: 10px !important;
+}
+.theme-entry .rf-social a {
+    width: 36px !important;
+    height: 36px !important;
+    border: 1px solid rgba(255, 255, 255, .25) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #e8ddd6 !important;
+    transition: .2s !important;
+}
+
+.theme-entry .rf-col h4 {
+    font-size: 11.5px !important;
+    letter-spacing: .16em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, .58) !important;
+    margin: 0 0 13px !important;
+    font-weight: 600 !important;
+}
+
+.theme-entry .rf-col a, .rf-col p {
+    display: block !important;
+    font-size: 14px !important;
+    color: #e8ddd6 !important;
+    text-decoration: none !important;
+    margin: 0 0 9px !important;
+    line-height: 1.5 !important;
+}
+
+.theme-entry .rf-col h4 {
+    font-size: 11.5px !important;
+    letter-spacing: .16em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, .58) !important;
+    margin: 0 0 13px !important;
+    font-weight: 600 !important;
+}
+
+.theme-entry .rf-bot-in {
+    max-width: 1040px !important;
+    margin: 0 auto !important;
+    padding: 16px 44px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+    font-size: 12px !important;
+    color: rgba(255, 255, 255, .55) !important;
+    border-top: 1px solid rgba(255, 255, 255, .12) !important;
+}
+
+.theme-entry .rf-bot-in a {
+    color: rgba(255, 255, 255, .72) !important;
+    text-decoration: none !important;
 }

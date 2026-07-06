@@ -62,6 +62,11 @@
     padding: 0 !important;
 }
 
+.theme-entry div[name="Header_Navbar"]{
+    position: sticky !important;
+    z-index: 20 !important;
+}
+
 .theme-entry .panel-header,
 .theme-entry .panel-header-text,
 .theme-entry .form-title,

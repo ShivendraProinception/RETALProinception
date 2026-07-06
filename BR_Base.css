@@ -111,7 +111,6 @@
 
 .theme-entry .rfooter {
     width: 100vw !important;
-    margin-inline: calc(50% - 50vw) !important;
     margin-top: 58px !important;
     margin-bottom: -64px !important;
     background: #3a271e !important;

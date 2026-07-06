@@ -55,7 +55,11 @@
 }
 
 .theme-entry {
-    font-family: 'SangBleu Kingdom', serif !important;
+    font-family: var(--font-title) !important;
+}
+
+.theme-entry .form {
+    padding: 0;
 }
 
 .theme-entry .panel-header,

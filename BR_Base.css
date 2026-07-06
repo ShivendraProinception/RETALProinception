@@ -59,7 +59,7 @@
 }
 
 .theme-entry .form {
-    padding: 0;
+    padding: 0 !important;
 }
 
 .theme-entry .panel-header,
@@ -96,13 +96,13 @@
 .theme-entry a[name="btnLanguage"]{
     color: var(--color-primary) !important;
     font-size: 16px;
-    font-family: var(--font-arabic);
-    background-color: #ffffff;
-    border: solid #F3EFED;
-    border-radius: 0;
+    font-family: var(--font-arabic) !important;
+    background-color: #ffffff !important;
+    border: solid #F3EFED !important;
+    border-radius: 0 !important;
 }
 
 .theme-entry a[name="btnLanguage"]:hover{
-    background-color: var(--primary-header-hover);
-    border: solid var(--color-primary);
+    background-color: var(--primary-header-hover) !important;
+    border: solid var(--color-primary) !important;
 }

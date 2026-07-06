@@ -74,3 +74,13 @@
         font-family: "Favorit", sans-serif !important;
         font-size: 16px !important;
     }
+
+.theme-entry .runtime-content{
+    margin: 0 !important;
+}
+
+.theme-entry a[name="btnLanguage"]{
+    color: #9E6950;
+    font-size: 16px;
+    font-family: "29LT Zarid Display Variable";
+}

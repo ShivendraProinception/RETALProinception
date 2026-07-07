@@ -54,7 +54,7 @@
 }
 
 .theme-entry {
-    font-family: var(--font-title) !important;
+    font-family: var(--font-body) !important;
 }
 
 .theme-entry .form {
@@ -75,7 +75,7 @@
 .theme-entry h1, 
 .theme-entry h2, 
 .theme-entry h3 {
-    font-family: 'SangBleu Kingdom', serif !important;
+    font-family: var(--font-title), serif !important;
     font-weight: normal !important;
 }
 

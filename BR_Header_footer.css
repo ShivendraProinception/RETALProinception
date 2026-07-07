@@ -113,13 +113,17 @@
     border: solid 1px var(--color-primary) !important;
 }
 
+.theme-entry span[name="emptySpaceBottom"]{
+    display: none !important;
+}
 
 .theme-entry .rfooter {
     width: 100vw !important;
-    margin-top: 58px !important;
-    margin-bottom: -64px !important;
+    margin-top: 0px !important;
     background: #3a271e !important;
     color: #e8ddd6 !important;
+    margin-bottom: 0px !important;
+    display: block !important;
 }
 
 .theme-entry .rf-top {
@@ -129,6 +133,7 @@
     display: grid !important;
     grid-template-columns: 1.5fr 1fr 1.4fr !important;
     gap: 40px !important;
+    align-items: center !important;
 }
 
 .theme-entry .rf-logo {

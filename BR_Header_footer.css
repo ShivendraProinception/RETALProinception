@@ -255,16 +255,22 @@
    K2 PROGRESS BAR CUSTOMIZATION (INLINE, STRETCHED & GREEN)
 ========================================================= */
 
+
 .theme-entry div[name="Progress"] .container.metro {
     display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Isse elements naye line mein nahi jayenge */
     width: 100% !important;
     counter-reset: k2-step-counter; 
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* Ensure container takes full width */
 .theme-entry div[name="Progress"] .step-container {
     display: flex !important;
-    flex: 1 1 100% !important; /* YEH LINE STRETCH KAREGI */
+    flex: 1 1 0 !important; /* YEH LINE STRETCH KAREGI */
+    min-width: 0 !important;
 }
 
 .theme-entry div[name="Progress"] .step-area {

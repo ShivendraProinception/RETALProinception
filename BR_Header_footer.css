@@ -214,3 +214,127 @@
     color: rgba(255, 255, 255, .72) !important;
     text-decoration: none !important;
 }
+
+
+/* =========================================================
+   K2 PROGRESS BAR CUSTOMIZATION (INLINE & NUMBERED)
+========================================================= */
+
+/* 1. Main Container and Flexbox Setup */
+.theme-entry div[name="Progress"] .container.metro {
+    display: flex !important;
+    width: 100% !important;
+    counter-reset: k2-step-counter; /* 1, 2, 3 for numbers counter start */
+}
+
+.theme-entry div[name="Progress"] .step-container {
+    display: flex !important;
+    flex: 1 1 auto !important; /* All steps take equal space  */
+}
+
+.theme-entry div[name="Progress"] .step-area {
+    display: flex !important;
+    width: 100% !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-decoration: none !important;
+}
+
+/* 2. MAGIC HACK: Hide inner divs and take content out */
+.theme-entry div[name="Progress"] .step-item,
+.theme-entry div[name="Progress"] .step-title {
+    display: contents !important; 
+}
+
+/* 3. REORDER Items (Left Line -> Circle -> Title -> Right Line) */
+.theme-entry div[name="Progress"] .connector-left  { order: 1; }
+.theme-entry div[name="Progress"] .step            { order: 2; }
+.theme-entry div[name="Progress"] .title           { order: 3; }
+.theme-entry div[name="Progress"] .connector-right { order: 4; }
+
+
+/* =========================================================
+   LINES (CONNECTORS) STYLING
+========================================================= */
+.theme-entry div[name="Progress"] .connector-left,
+.theme-entry div[name="Progress"] .connector-right {
+    position: static !important;
+    height: 2px !important;
+    background-color: #EEE8E5 !important;
+    flex-grow: 1 !important; /* stretch for the remaing width*/
+    width: auto !important;
+}
+
+/* 1st left and last right connector hide*/
+.theme-entry div[name="Progress"] .step-container.first .connector-left,
+.theme-entry div[name="Progress"] .step-container.last .connector-right {
+    display: none !important;
+}
+
+
+/* =========================================================
+   CIRCLES AND NUMBERS (1, 2, 3...)
+========================================================= */
+.theme-entry div[name="Progress"] .step {
+    counter-increment: k2-step-counter; /*Increase the counter (1, 2, 3) */
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    border: 2px solid #EEE8E5 !important; /* Inactive Border */
+    background-color: #FFFFFF !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+}
+
+/* Removing defalut K2 SVG Checkmark */
+.theme-entry div[name="Progress"] .step svg {
+    display: none !important;
+}
+
+/* Numbers instead of SVG*/
+.theme-entry div[name="Progress"] .step::after {
+    content: counter(k2-step-counter);
+    font-family: var(--font-body, 'Favorit') !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #A0A0A0 !important; /* Inactive number color */
+}
+
+
+/* =========================================================
+   TITLE TEXT STYLING
+========================================================= */
+.theme-entry div[name="Progress"] .title {
+    font-family: var(--font-body, 'Favorit') !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #8C8C8C !important; /* Inactive Gray Text */
+    margin-left: 12px !important;  /* Title and Number gap */
+    margin-right: 12px !important; /* Title and right line gap */
+    white-space: nowrap !important;
+    display: block !important;
+}
+
+
+/* =========================================================
+   ACTIVE (CURRENT) STEP STYLING
+========================================================= */
+/* Active Circle: Bronze Background */
+.theme-entry div[name="Progress"] .step-container.selected .step {
+    background-color: var(--color-primary, #B07946) !important;
+    border-color: var(--color-primary, #B07946) !important;
+}
+
+/* Active Number: White Color */
+.theme-entry div[name="Progress"] .step-container.selected .step::after {
+    color: var(--retal-white, #FFFFFF) !important;
+}
+
+/* Active Title: Dark & Bold Text */
+.theme-entry div[name="Progress"] .step-container.selected .title {
+    color: var(--retal-dark, #272829) !important;
+    font-weight: 600 !important;
+}

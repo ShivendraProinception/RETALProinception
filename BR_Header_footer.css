@@ -99,7 +99,7 @@
 }
 
 
-.theme-entry .SFC .SourceCode-Forms-Controls-Web-Button {
+.theme-entry .SFC .SourceCode-Forms-Controls-Web-Button a {
     display: inline-flex;
     align-items: center;
     gap: 10px;

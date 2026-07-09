@@ -21,7 +21,7 @@
     outline: none !important;
     
     /* Apply custom font from the provided file */
-    font-family: '29LT Zarid Display Variable', Arial, sans-serif !important;
+    font-family: var(--font-body), Arial, sans-serif !important;
     font-size: 14px !important;
 }
 
@@ -45,13 +45,13 @@
     box-sizing: border-box !important;
     transition: all 0.15s ease-in-out !important;
     box-shadow: none !important;
-    font-family: '29LT Zarid Display Variable', Arial, sans-serif !important;
+    font-family: var(--font-body), Arial, sans-serif !important;
 }
 
 
 /* 3. LABELS (e.g. "Representative mobile") */
 .theme-entry .SFC.SourceCode-Forms-Controls-Web-Label {
-    font-family: '29LT Zarid Display Variable', Arial, sans-serif !important;
+    font-family: var(--font-body), Arial, sans-serif !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     color: #333 !important; 

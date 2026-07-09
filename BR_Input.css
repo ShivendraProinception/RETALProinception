@@ -1,0 +1,68 @@
+/* =========================================================
+   K2 GENERIC CONTROLS MASTER STYLING
+   Based on Prototype (.field & .inp combined)
+========================================================= */
+
+/* 1. TEXTBOX, TEXTAREA, AND NUMBER INPUTS */
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextArea,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-SpinBox {
+    border: 1px solid #E6DEDB !important;
+    border-radius: 11px !important;
+    background-color: #fff !important;
+    
+    /* Combined Padding: Top/Bottom (12px) + Left/Right (13px) */
+    padding: 12px 13px !important; 
+    
+    box-sizing: border-box !important;
+    width: 100% !important;
+    transition: all 0.15s ease-in-out !important;
+    box-shadow: none !important;
+    outline: none !important;
+    
+    /* Apply custom font from the provided file */
+    font-family: '29LT Zarid Display Variable', Arial, sans-serif !important;
+    font-size: 14px !important;
+}
+
+/* K2 Textbox Hover & Focus States */
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox:focus,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextArea:focus,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox:hover {
+    border-color: #99614D !important; /* Prototype brown color */
+}
+
+
+/* 2. DROPDOWN LISTS & PICKERS */
+/* K2  dropdowns is slightly different, we target the inner box */
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList .dropdown-box,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-Picker .input-control {
+    border: 1px solid #E6DEDB !important;
+    border-radius: 11px !important;
+    background-color: #fff !important;
+    padding: 8px 13px !important; /* Dropdowns need slightly less vertical padding to align properly */
+    min-height: 44px !important; /* Matches overall height of textboxes */
+    box-sizing: border-box !important;
+    transition: all 0.15s ease-in-out !important;
+    box-shadow: none !important;
+    font-family: '29LT Zarid Display Variable', Arial, sans-serif !important;
+}
+
+
+/* 3. LABELS (e.g. "Representative mobile") */
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label {
+    font-family: '29LT Zarid Display Variable', Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #333 !important; 
+    margin-bottom: 8px !important;
+    display: block !important;
+}
+
+/* 4. ASTERISK FOR REQUIRED FIELDS (The red star) */
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label .req,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label .mandatory-indicator {
+    color: #D32F2F !important; /* Standard red */
+    margin-left: 4px !important;
+    font-weight: bold !important;
+}

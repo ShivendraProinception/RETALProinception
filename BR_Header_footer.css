@@ -437,3 +437,30 @@
     background-color: #4CAF50 !important;
 }
 
+/* =========================================================
+   HERO BACKGROUND & SVG STYLING
+========================================================= */
+.theme-entry .rhero-bg {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    background-color: rgb(158, 104, 80) !important;
+}
+
+.theme-entry svg.rhero-sky {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 56% !important;
+}
+
+.theme-entry svg.rhero-sky * {
+    stroke: rgba(255, 255, 255, 0.5) !important;
+    stroke-width: 1.1 !important;
+    fill: none !important;
+    vector-effect: non-scaling-stroke !important;
+    stroke-dasharray: 1600 !important;
+    stroke-dashoffset: 0 !important;
+}

@@ -9,9 +9,6 @@ $(document).ready(function() {
     
     // 2. Background & Veil
     $('div.rhero-veil').css({"position": "absolute", "inset": "0", "z-index": "1", "background": "linear-gradient(90deg, rgba(45, 29, 21, .6), rgba(45, 29, 21, .12) 58%, transparent 88%), linear-gradient(0deg, rgba(40, 25, 18, .6), transparent 42%)", "pointer-events": "none"});
-    $('div.rhero-bg').css({"position": "absolute", "inset": "0", "z-index": "0", "background-color": "rgb(158, 104, 80)"});
-    $('svg.rhero-sky').css({ "position" : "absolute", "left" : "0" , "right" : "0", "bottom": "0", "width": "100%", "height" : "56%"});
-    $('svg.rhero-sky *').css({ "stroke" : "rgba(255, 255, 255, .5)", "stroke-width" : "1.1" , "fill" : "none" , "vector-effect" : "non-scaling-stroke","stroke-dasharray" : "1600","stroke-dashoffset" : "0"});
     
     // 3. Banner Buttons Default State
     $('[name="btnStartRegistration"]').css({"background-color": "white","color":"var(--color-primary)"});

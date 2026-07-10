@@ -101,6 +101,23 @@
 
 /**/
 
+
+/* =========================================================
+   SAFETY NET: K2 HIDDEN CONTROLS FIX
+   Yeh ensure karega ki K2 ka hide/show rules hamesha kaam kare
+========================================================= */
+.theme-entry [style*="display: none"] {
+    display: none !important;
+}
+
+.theme-entry [style*="display:none"] {
+    display: none !important;
+}
+
+.theme-entry .hidden {
+    display: none !important;
+}
+
 .theme-entry a.SourceCode-Forms-Controls-Web-Button,
 .theme-entry .SourceCode-Forms-Controls-Web-Button {
     display: inline-flex !important;
@@ -118,6 +135,9 @@
     text-decoration: none !important;
     transition: all 0.3s ease !important;
 }
+
+
+
 
 /* =========================================================
    2. "NORMAL" BUTTON COLORS (Only for default buttons)

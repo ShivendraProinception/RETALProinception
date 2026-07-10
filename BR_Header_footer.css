@@ -103,18 +103,22 @@
 
 
 /* =========================================================
-   SAFETY NET: K2 HIDDEN CONTROLS FIX
-   Yeh ensure karega ki K2 ka hide/show rules hamesha kaam kare
+   SAFETY NET: HIGH SPECIFICITY K2 HIDDEN CONTROLS FIX
+   Yeh CSS rule specific elements ko target karta hai taaki 
+   unki power humari design CSS se zyada ho jaye.
 ========================================================= */
-.theme-entry [style*="display: none"] {
-    display: none !important;
-}
 
-.theme-entry [style*="display:none"] {
-    display: none !important;
-}
+/* Generic High Power Hide */
+html body .theme-entry .hidden,
+html body .theme-entry [style*="display: none"],
+html body .theme-entry [style*="display:none"],
 
-.theme-entry .hidden {
+/* Specific Elements High Power Hide (Buttons, Radios, Inputs) */
+html body .theme-entry a.button.hidden,
+html body .theme-entry a.button[style*="display: none"],
+html body .theme-entry label.radio.hidden,
+html body .theme-entry label.radio[style*="display: none"],
+html body .theme-entry .input-control.hidden {
     display: none !important;
 }
 

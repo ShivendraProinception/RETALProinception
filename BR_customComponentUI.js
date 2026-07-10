@@ -64,7 +64,7 @@ $(document).ready(function () {
                         <svg viewBox="0 0 24 24" width="22" height="22" stroke="#5c3926" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="9"></circle>
                             <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18">
-                        </path>
+                            </path>
                         </svg>
                     </div>
                     <h3>International</h3>

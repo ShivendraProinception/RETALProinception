@@ -37,6 +37,7 @@
     height: 100% !important;
     box-sizing: border-box !important;
     box-shadow: none !important;
+    width: 95% !important;
 }
 
 /* Hover State */

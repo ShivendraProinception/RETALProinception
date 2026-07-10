@@ -1,17 +1,17 @@
 $(document).ready(function () {
-    
+
     // Waiting for K2 Dom to render to render
-    var waitForK2Radios = setInterval(function() {
-        
+    var waitForK2Radios = setInterval(function () {
+
         // When it finds 'Individual' and 'Local' then script will move ahead
         if ($('label.radio[title="Individual"]').length > 0 && $('label.radio[title="Local"]').length > 0) {
-            
+
             clearInterval(waitForK2Radios); // Check karna band karo
 
             // =========================================================
             // 1. BROKER TYPE RADIO BUTTONS TO CARDS
             // =========================================================
-            
+
             // Direct target using title attribute
             $('label.radio[title="Individual"] .input-control-text').html(`
                 <div class="radio-card-content">
@@ -42,7 +42,7 @@ $(document).ready(function () {
             // =========================================================
             // 2. REGISTRATION SCOPE RADIO BUTTONS TO CARDS
             // =========================================================
-            
+
             $('label.radio[title="Local"] .input-control-text').html(`
                 <div class="radio-card-content">
                     <div class="radio-icon">
@@ -62,9 +62,9 @@ $(document).ready(function () {
                     <div class="radio-icon">
                         <!-- Globe Icon -->
                         <svg viewBox="0 0 24 24" width="22" height="22" stroke="#5c3926" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18">
+                        </path>
                         </svg>
                     </div>
                     <h3>International</h3>

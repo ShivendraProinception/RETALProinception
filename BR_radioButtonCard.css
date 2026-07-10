@@ -38,11 +38,14 @@
     box-sizing: border-box !important;
     box-shadow: none !important;
     width: 95% !important;
+    transform: translateY(0px) !important;
+    transition: transform 0.2s ease !important;
 }
 
 /* Hover State */
 .theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio:hover {
     border-color: #9E6850 !important; 
+    transform: translateY(-2px) !important;
 }
 
 /* Active / Selected State */
@@ -50,7 +53,7 @@
 .theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio:has(input[type="radio"]:checked) {
     border-color: #9E6850 !important;
     box-shadow: 0 0 0 1px #9E6850 !important; 
-    background-color: #FDFBF9 !important; 
+    background-color: #F3E9E3 !important; 
 }
 
 /* 4. Inside Content (Typography & Icons) */

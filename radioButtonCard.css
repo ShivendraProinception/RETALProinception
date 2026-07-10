@@ -1,0 +1,101 @@
+/* =========================================================
+   RADIO BUTTONS AS CARDS (Individual / Company ONLY)
+========================================================= */
+
+
+/* 1. Hide K2 default radio circles */
+
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio > svg,
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) .input-control-img {
+    display: none !important;
+}
+
+/* 2. Container Flexbox so that cards align side by side*/
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) {
+    display: flex !important;
+    gap: 20px !important;
+    flex-direction: row !important;
+    width: 100% !important;
+}
+
+/* Both options ko 50%-50% space dena */
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) .stack {
+    flex: 1 !important;
+    width: 50% !important;
+    padding: 0 !important;
+}
+
+/* 3. The Card (Clickable Label) Styling */
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio {
+    display: block !important;
+    border: 1px solid #E6DEDB !important; 
+    border-radius: 12px !important;
+    padding: 24px !important;
+    background-color: #fff !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease-in-out !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+}
+
+/* Hover State */
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio:hover {
+    border-color: #9E6850 !important; 
+}
+
+/* Active / Selected State */
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio.checked,
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio:has(input[type="radio"]:checked) {
+    border-color: #9E6850 !important;
+    box-shadow: 0 0 0 1px #9E6850 !important; 
+    background-color: #FDFBF9 !important; 
+}
+
+/* 4. Inside Content (Typography & Icons) */
+.theme-entry .radio-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.theme-entry .radio-icon {
+    width: 46px;
+    height: 46px;
+    background-color: #F3E9E3; 
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.theme-entry .radio-card-content h3 {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+    margin: 0 0 8px 0 !important;
+    font-family: var(--font-body), Arial, sans-serif !important;
+}
+
+.theme-entry .radio-card-content p {
+    font-size: 14px !important;
+    color: #888 !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+    font-family: var(--font-body), Arial, sans-serif !important;
+    white-space: normal !important; 
+}
+
+/* Card Icon Hover & Active State Design (Prototype Matching) */
+
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio.checked .radio-icon,
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio:has(input[type="radio"]:checked) .radio-icon {
+    background-color: #99614D !important; /* Retal Solid Brown */
+    transition: all 0.2s ease-in-out !important;
+}
+
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio.checked .radio-icon svg,
+.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio:has(input[type="radio"]:checked) .radio-icon svg {
+    stroke: #ffffff !important; /* SVG Stroke becomes white */
+}

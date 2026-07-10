@@ -3,53 +3,106 @@
    Based on Prototype (.field & .inp combined)
 ========================================================= */
 
-/* 1. TEXTBOX, TEXTAREA, AND NUMBER INPUTS */
+/* ---------------------------------------------------------
+   1. TEXTBOX & SPINBOX (Standard Inputs)
+--------------------------------------------------------- */
 .theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox,
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextArea,
 .theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-SpinBox {
     border: 1px solid #E6DEDB !important;
     border-radius: 11px !important;
     background-color: #fff !important;
-    
-    /* Combined Padding: Top/Bottom (12px) + Left/Right (13px) */
     padding: 12px 13px !important; 
-    
     box-sizing: border-box !important;
     width: 100% !important;
+    height: 44px !important; /* Standard Height */
     transition: all 0.15s ease-in-out !important;
     box-shadow: none !important;
     outline: none !important;
-    
-    /* Apply custom font from the provided file */
     font-family: var(--font-body), Arial, sans-serif !important;
     font-size: 14px !important;
 }
 
-/* K2 Textbox Hover & Focus States */
 .theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox:focus,
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextArea:focus,
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox:hover {
-    border-color: #99614D !important; /* Prototype brown color */
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox:hover,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-SpinBox:focus,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-SpinBox:hover {
+    border-color: #99614D !important; /* Hover Highlight */
+}
+
+/* ---------------------------------------------------------
+   2. TEXTAREA (Direct Tag Targeting - MAGIC FIX)
+--------------------------------------------------------- */
+.theme-entry textarea {
+    border: 1px solid #E6DEDB !important;
+    border-radius: 11px !important;
+    background-color: #fff !important;
+    padding: 12px 13px !important; 
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-height: 80px !important;
+    transition: all 0.15s ease-in-out !important;
+    box-shadow: none !important;
+    outline: none !important;
+    font-family: var(--font-body), Arial, sans-serif !important;
+    font-size: 14px !important;
+    resize: vertical !important; 
+}
+
+.theme-entry textarea:focus,
+.theme-entry textarea:hover {
+    border-color: #99614D !important;
+}
+
+/* Textarea ke bahar wale K2 double-borders clear karna */
+.theme-entry .input-control.textarea,
+.theme-entry .input-control:has(textarea) {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
 }
 
 
-/* 2. DROPDOWN LISTS & PICKERS */
-/* K2  dropdowns is slightly different, we target the inner box */
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList .dropdown-box,
+/* ---------------------------------------------------------
+   3. DROPDOWNS & DATE PICKERS (Targeting Inner .input-control)
+--------------------------------------------------------- */
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList .input-control,
 .theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-Picker .input-control {
     border: 1px solid #E6DEDB !important;
     border-radius: 11px !important;
     background-color: #fff !important;
-    padding: 8px 13px !important; /* Dropdowns need slightly less vertical padding to align properly */
-    min-height: 44px !important; /* Matches overall height of textboxes */
+    height: 44px !important; /* Match Textbox height */
     box-sizing: border-box !important;
     transition: all 0.15s ease-in-out !important;
     box-shadow: none !important;
-    font-family: var(--font-body), Arial, sans-serif !important;
 }
 
+/* Dropdown & Picker Hover/Focus States */
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList:hover .input-control,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList.focus .input-control,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-Picker:hover .input-control,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-Picker.focus .input-control {
+    border-color: #99614D !important;
+}
 
-/* 3. LABELS (e.g. "Representative mobile") */
+/* Remove internal K2 bottom borders aur padding theek karna */
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList .input-control-m-c,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-Picker .input-control-m-c {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding-left: 10px !important; /* Text ko thoda right mein shift karna */
+}
+
+/* Dropdown & Picker Typography */
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList .input-control-text,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-Picker .input-control-text {
+    font-family: var(--font-body), Arial, sans-serif !important;
+    font-size: 14px !important;
+    color: #272829 !important; /* Retal Dark text */
+}
+
+/* 4. LABELS (e.g. "Representative mobile") */
 /* :not() ensures that Headings (h1-h6) inside Header/Footer are COMPLETELY IGNORED */
 .theme-entry .SFC.SourceCode-Forms-Controls-Web-Label:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
     font-family: var(--font-body), Arial, sans-serif !important;
@@ -60,7 +113,7 @@
     display: block !important;
 }
 
-/* 4. ASTERISK FOR REQUIRED FIELDS (The red star) */
+/* 5. ASTERISK FOR REQUIRED FIELDS (The red star) */
 .theme-entry .SFC.SourceCode-Forms-Controls-Web-Label:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) .req,
 .theme-entry .SFC.SourceCode-Forms-Controls-Web-Label:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) .mandatory-indicator {
     color: #D32F2F !important; /* Standard red */

@@ -64,43 +64,80 @@
 
 
 /* ---------------------------------------------------------
-   3. DROPDOWNS & DATE PICKERS (Targeting Inner .input-control)
+   3. DROPDOWNS & DATE PICKERS (DOM-Specific Targeting)
 --------------------------------------------------------- */
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList .input-control,
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-Picker .input-control {
+/* Main Container Styling */
+.theme-entry .dropdown-box,
+.theme-entry .calendar-control {
     border: 1px solid #E6DEDB !important;
     border-radius: 11px !important;
     background-color: #fff !important;
-    height: 44px !important; /* Match Textbox height */
+    height: 44px !important;
     box-sizing: border-box !important;
+    overflow: hidden !important;
     transition: all 0.15s ease-in-out !important;
-    box-shadow: none !important;
 }
 
-/* Dropdown & Picker Hover/Focus States */
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList:hover .input-control,
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList.focus .input-control,
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-Picker:hover .input-control,
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-Picker.focus .input-control {
+/* Hover & Focus States */
+.theme-entry .dropdown-box:hover,
+.theme-entry .calendar-control:hover,
+.theme-entry .dropdown-box.active,
+.theme-entry .calendar-control.active {
     border-color: #99614D !important;
 }
 
-/* Remove internal K2 bottom borders aur padding theek karna */
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList .input-control-m-c,
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-Picker .input-control-m-c {
+/* K2 native 9-grid borders ko hide karna */
+.theme-entry .dropdown-box .input-control-t,
+.theme-entry .dropdown-box .input-control-b,
+.theme-entry .calendar-control .input-control-t,
+.theme-entry .calendar-control .input-control-b {
+    display: none !important;
+}
+
+/* Remove background and shadows from Internal wrappers */
+.theme-entry .dropdown-box .input-control-body,
+.theme-entry .calendar-control .input-control-body,
+.theme-entry .dropdown-box .input-control-m-c,
+.theme-entry .calendar-control .input-control-m-c {
     border: none !important;
     background: transparent !important;
     box-shadow: none !important;
-    padding-left: 10px !important; /* Text ko thoda right mein shift karna */
 }
 
-/* Dropdown & Picker Typography */
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-DropDownList .input-control-text,
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-Control-Picker .input-control-text {
+/* Middle section full height*/
+.theme-entry .dropdown-box .styling-outer-wrapper,
+.theme-entry .calendar-control .styling-outer-wrapper,
+.theme-entry .dropdown-box .input-control-m,
+.theme-entry .calendar-control .input-control-m {
+    height: 100% !important;
+}
+
+/* Text vertically center and left padding */
+.theme-entry .dropdown-box .input-control-wrapper,
+.theme-entry .calendar-control .input-control-wrapper {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-left: 13px !important;
+}
+
+/* Typography Settings */
+.theme-entry .dropdown-box a.input-control span,
+.theme-entry .calendar-control input.input-control {
     font-family: var(--font-body), Arial, sans-serif !important;
     font-size: 14px !important;
-    color: #272829 !important; /* Retal Dark text */
+    color: #272829 !important;
+    border: none !important; 
+    background: transparent !important;
 }
+
+/* Calendar and Dropdown icon's left line remove  */
+.theme-entry .dropdown-box .border-left-only,
+.theme-entry .calendar-control .border-left-only {
+    border-left: none !important;
+}
+
+
 
 /* 4. LABELS (e.g. "Representative mobile") */
 /* :not() ensures that Headings (h1-h6) inside Header/Footer are COMPLETELY IGNORED */

@@ -150,10 +150,26 @@
     display: block !important;
 }
 
-/* 5. ASTERISK FOR REQUIRED FIELDS (The red star) */
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) .req,
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) .mandatory-indicator {
-    color: #D32F2F !important; /* Standard red */
-    margin-left: 4px !important;
-    font-weight: bold !important;
-}
+    /* 5. Error Input css  */
+
+    .theme-entry .input-control.invalid.watermark a.input-control,
+    .theme-entry .input-control.invalid.watermark a.input-control span,
+    .theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox.invalid.watermark,
+    .theme-entry .input-control.invalid .input-control-watermark {
+        color: #c34242 !important;
+    }
+
+    .theme-entry input.SFC.SourceCode-Forms-Controls-Web-TextBox.invalid {
+        border-color: #c34242 !important;
+        color: #c34242 !important;
+    }
+
+    .theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox.invalid.watermark {
+        border: 1px solid #c34242 !important;
+        color: #c34242 !important;
+    }
+
+    .input-control.select-box.lookup-box.calendar-control.datepicker.invalid .styling-outer-wrapper {
+        border: 1px solid #c34242 !important;
+        color: #c34242 !important;
+    }

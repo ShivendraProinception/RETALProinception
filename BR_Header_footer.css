@@ -45,6 +45,16 @@
     --retal-bg-light: #F4F4F4;   /* Background Light Color */
     --retal-border: #D1D1D1;     /* Textbox borders ke liye */
     --retal-white: #FFFFFF;
+    --warn-soft: #f7ecda;
+    --warn-color: #9a6a26;
+    --danger-soft: #f5e3e1;
+    --danger-color: #9b4339;
+    --ok-soft: #e7f0e6;
+    --ok-color: #43703f;
+    --suspended-soft: #ece9f0;
+    --suspended-color: #6b6076;
+
+
 
     /* Font Variables */
     --font-title: '29LT Zarid Display Variable', 'SangBleu Kingdom', Georgia, serif;
@@ -499,4 +509,67 @@ html body .theme-entry .input-control.hidden {
     height: auto !important;
     line-height: normal !important;
     box-sizing: border-box !important;
+}
+
+
+/*=======================================================
+    8 Pill Styling based on Name
+========================================================*/
+
+span[name="dlbApplicationStatus"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-weight: 700 !important;
+    padding: 4px 11px !important;
+    border-radius: 30px !important;
+    white-space: nowrap !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Dot same as Prototype*/
+span[name="dlbApplicationStatus"]::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+/* 4. Conditional Classes (JS will add these) */
+
+/* OK State (Active, Submitted) */
+span[name="dlbApplicationStatus"].status-ok {
+    background: var(--ok-soft) !important;
+    color: var(--ok-color) !important;
+}
+span[name="dlbApplicationStatus"].status-ok::before {
+    background-color: var(--ok-color) !important;
+}
+
+/* Warn State (Expiring soon, Pending approval) */
+span[name="dlbApplicationStatus"].status-warn {
+    background: var(--warn-soft) !important;
+    color: var(--warn-color) !important;
+}
+span[name="dlbApplicationStatus"].status-warn::before {
+    background-color: var(--warn-color) !important;
+}
+
+/* Danger State (Rejected) */
+span[name="dlbApplicationStatus"].status-danger {
+    background: var(--danger-soft) !important;
+    color: var(--danger-color) !important;
+}
+span[name="dlbApplicationStatus"].status-danger::before {
+    background-color: var(--danger-color) !important;
+}
+
+/* Suspended State */
+span[name="dlbApplicationStatus"].status-suspended {
+    background: var(--suspended-soft) !important;
+    color: var(--suspended-color) !important;
+}
+span[name="dlbApplicationStatus"].status-suspended::before {
+    background-color: var(--suspended-color) !important;
 }

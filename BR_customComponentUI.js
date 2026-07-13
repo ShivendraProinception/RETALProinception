@@ -73,4 +73,39 @@ $(document).ready(function () {
             `);
         }
     }, 500);
+
+    // =========================================================
+    // DYNAMIC STATUS BADGE LOGIC
+    // =========================================================
+    setInterval(function() {
+        var statusLabel = $('span[name="dlbApplicationStatus"]');
+        
+        if (statusLabel.length > 0) {
+            var currentText = statusLabel.text().trim();
+            var appliedStatus = statusLabel.attr('data-applied-status');
+            
+            // Check if the text is updated and is not empty
+            if (currentText !== appliedStatus && currentText !== "") {
+                // Save new status so that status is not repetative
+                statusLabel.attr('data-applied-status', currentText);
+                
+                // remove old any custom class if added
+                statusLabel.removeClass('status-ok status-warn status-danger status-suspended');
+                
+                // Based on current text apply correct class
+                if (currentText === 'Submitted' || currentText === 'Active') {
+                    statusLabel.addClass('status-ok');
+                } 
+                else if (currentText === 'Expiring soon' || currentText === 'Pending approval') {
+                    statusLabel.addClass('status-warn');
+                } 
+                else if (currentText === 'Rejected') {
+                    statusLabel.addClass('status-danger');
+                } 
+                else if (currentText === 'Suspended') {
+                    statusLabel.addClass('status-suspended');
+                }
+            }
+        }
+    }, 500);
 });

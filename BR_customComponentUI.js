@@ -93,16 +93,16 @@ $(document).ready(function () {
                 statusLabel.removeClass('status-ok status-warn status-danger status-suspended');
                 
                 // Based on current text apply correct class
-                if (currentText === 'Submitted' || currentText === 'Active') {
+                if (currentText == 'Submitted' || currentText == 'Active' || currentText == 'Approved & active') {
                     statusLabel.addClass('status-ok');
                 } 
-                else if (currentText === 'Expiring soon' || currentText === 'Pending approval') {
+                else if (currentText == 'Expiring soon' || currentText == 'Pending approval' || currentText == 'Under Review By Retal') {
                     statusLabel.addClass('status-warn');
                 } 
-                else if (currentText === 'Rejected') {
+                else if (currentText == 'Rejected') {
                     statusLabel.addClass('status-danger');
                 } 
-                else if (currentText === 'Suspended') {
+                else if (currentText == 'Suspended') {
                     statusLabel.addClass('status-suspended');
                 }
             }

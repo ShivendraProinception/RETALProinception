@@ -53,6 +53,7 @@
     --ok-color: #43703f;
     --suspended-soft: #ece9f0;
     --suspended-color: #6b6076;
+    --muted-color: #9a8c83;
 
 
 
@@ -67,6 +68,27 @@
 .theme-entry {
     font-family: var(--font-body) !important;
 }
+
+
+    .theme-entry .form .view .innerpanel>.grid,
+    .theme-entry #pgInnerPanel .view .innerpanel>.grid,
+    .theme-entry .form-tabs>.tab-box-body .view .innerpanel>.grid,
+    .theme-entry #pgTabContent .view .innerpanel>.grid,
+    .theme-entry .form .view .innerpanel>.panel,
+    .theme-entry #pgInnerPanel .view .innerpanel>.panel,
+    .theme-entry .form-tabs>.tab-box-body .view .innerpanel>.panel,
+    .theme-entry #pgTabContent .view .innerpanel>.panel,
+    .theme-entry .form .view-canvas>.grid,
+    .theme-entry #pgInnerPanel .view-canvas>.grid,
+    .theme-entry .form-tabs>.tab-box-body .view-canvas>.grid,
+    .theme-entry #pgTabContent .view-canvas>.grid,
+    .theme-entry .form .view-canvas>.panel,
+    .theme-entry #pgInnerPanel .view-canvas>.panel,
+    .theme-entry .form-tabs>.tab-box-body .view-canvas>.panel,
+    .theme-entry #pgTabContent .view-canvas>.panel {
+        border-radius: 12px !important;
+    }
+
 
 .theme-entry .form {
     padding: 0 !important;
@@ -321,7 +343,7 @@ html body .theme-entry .input-control.hidden {
     display: inline-block;
     width: 15px;
     height: 15px;
-    background-color: currentColor; /* this will inherit color (#7d5240) */
+    background-color: currentColor;
     
     /* SVG converted to Data URI Mask */
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 18l-6-6 6-6'/%3E%3C/svg%3E") no-repeat center / contain;
@@ -572,4 +594,48 @@ span[name="dlbApplicationStatus"].status-suspended {
 }
 span[name="dlbApplicationStatus"].status-suspended::before {
     background-color: var(--suspended-color) !important;
+}
+
+
+/*==========================================================
+9. Error Message Pill
+============================================================*/
+
+span[name="dlbErrorMsg"]{
+    margin: 1rem auto !important;
+    font-weight: Normal !important;
+    font-style: var(--font-body);
+    font-size: 13px !important;
+    background-color: var(--warn-soft)  !important;
+    filter: none  !important;
+    color: var(--warn-color)  !important;
+    padding: 10px  !important;
+    border-radius: 1rem  !important;
+    width: 100%  !important;
+}
+
+
+/*==========================================================
+10. Track Application Page Specific changes
+============================================================*/
+[name="btnCheckStatus"]::before {
+    content: "" !important;
+    display: inline-block !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-color: currentColor !important;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path stroke-linecap='round' stroke-linejoin='round' d='M5 12h14M13 6l6 6-6 6' /></svg>") no-repeat center !important;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path stroke-linecap='round' stroke-linejoin='round' d='M5 12h14M13 6l6 6-6 6' /></svg>") no-repeat center !important;
+}
+
+.theme-entry div[name="TrackApplicationItemView"] {
+    background: transparent !important;
+}
+
+div[name="TrackApplicationItemView"] :is(h1, h2, h3, h4, h5, h6) {
+    color: black !important;
+}
+
+div[name="TrackApplicationItemView"] p {
+    color: var(--muted-color) !important;
 }

@@ -70,6 +70,10 @@
 }
 
 
+/*=================================
+For all views border radius setting (commented as of now as there might be some styling issues)
+=====================================*/
+/* 
     .theme-entry .form .view .innerpanel>.grid,
     .theme-entry #pgInnerPanel .view .innerpanel>.grid,
     .theme-entry .form-tabs>.tab-box-body .view .innerpanel>.grid,
@@ -87,7 +91,7 @@
     .theme-entry .form-tabs>.tab-box-body .view-canvas>.panel,
     .theme-entry #pgTabContent .view-canvas>.panel {
         border-radius: 12px !important;
-    }
+    } */
 
 
 .theme-entry .form {
@@ -676,6 +680,35 @@ span[name="dlbApplicationStatus"].status-suspended::before {
     color: black !important;
 }
 
-.theme-entry [name="TrackApplicationItemView"] p {
+
+.theme-entry p[name="lblTrackApplicationNote"]{
     color: var(--muted-color) !important;
 }
+
+
+/*=====================================================================================
+11. SELECT CATEGORY TYPE VIEW LEVEL CHANGES (RADIO BUTTON CSS IS IN BR_Input.css FILE)
+=======================================================================================*/
+
+.theme-entry span[name="dlbSelectedCategoryExpression"]{
+    background-color: #e6edf3 !important;
+    color: #3c566f !important;
+    display: flex !important;
+    gap: 11px !important;
+    padding: 13px 15px !important;
+    border-radius: 11px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+}
+
+[name="dlbSelectedCategoryExpression"]::before {
+    content: "" !important;
+    display: inline-block !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-color: currentColor !important;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path d='M20 6 9 17l-5-5' /></svg>") no-repeat center !important;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path d='M20 6 9 17l-5-5' /></svg>") no-repeat center !important;
+}
+
+

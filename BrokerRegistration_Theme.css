@@ -687,7 +687,7 @@ span[name="dlbApplicationStatus"].status-suspended::before {
 
 
 /*=====================================================================================
-11. SELECT CATEGORY TYPE VIEW LEVEL CHANGES (RADIO BUTTON CSS IS IN BR_Input.css FILE)
+11. SELECT CATEGORY TYPE VIEW LEVEL CHANGES (RADIO BUTTON CSS IS IN BR_RadioButtonCard.css FILE)
 =======================================================================================*/
 
 .theme-entry span[name="dlbSelectedCategoryExpression"]{

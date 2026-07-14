@@ -681,7 +681,7 @@ span[name="dlbApplicationStatus"].status-suspended::before {
 }
 
 
-.theme-entry p[name="lblTrackApplicationNote"]{
+.theme-entry [name="lblTrackApplicationNote"]{
     color: var(--muted-color) !important;
 }
 
@@ -741,4 +741,89 @@ span[name="dlbApplicationStatus"].status-suspended::before {
     background-color: currentColor !important;
     -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path d='M19 12H5M11 18l-6-6 6-6' /></svg>") no-repeat center !important;
     mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path d='M19 12H5M11 18l-6-6 6-6' /></svg>") no-repeat center !important;
+}
+
+
+
+/* =========================================================
+12. SUB-VIEW & SUB-FORM MODAL STYLING
+========================================================= */
+
+/* Overlay*/
+.theme-entry .modalizer {
+    background-color: rgba(0, 0, 0, 0.45) !important; 
+    backdrop-filter: blur(3px) !important;
+}
+
+
+.theme-entry div.popup.dialog.sub-form,
+.theme-entry div.popup.dialog.sub-view {
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
+    background-color: #f7f6f2 !important;
+    overflow: hidden !important; 
+}
+
+
+.theme-entry div.popup.dialog.sub-form .window-header,
+.theme-entry div.popup.dialog.sub-view .window-header {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #eaeaea !important;
+    padding: 16px 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    height: auto !important;
+}
+
+
+.theme-entry div.popup.dialog.sub-form .window-header .panel-header-text,
+.theme-entry div.popup.dialog.sub-view .window-header .panel-header-text {
+    color: #333333 !important;
+    font-family: var(--font-body), sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+
+.theme-entry div.popup.dialog.sub-form .window-close,
+.theme-entry div.popup.dialog.sub-view .window-close {
+    background: transparent !important;
+    border: none !important;
+    width: 24px !important;
+    height: 24px !important;
+    right: 20px !important; 
+    top: 16px !important;
+    opacity: 0.5 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.theme-entry div.popup.dialog.sub-form .window-close:hover,
+.theme-entry div.popup.dialog.sub-view .window-close:hover {
+    opacity: 1 !important; /* Hover pe dark hoga */
+}
+
+
+.theme-entry div.popup.dialog.sub-form .window-close span,
+.theme-entry div.popup.dialog.sub-view .window-close span {
+    display: none !important; 
+}
+
+
+.theme-entry div.popup.dialog.sub-form .window-close::after,
+.theme-entry div.popup.dialog.sub-view .window-close::after {
+    content: "" !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #333333 !important;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 18L18 6M6 6l12 12'/></svg>") no-repeat center / contain !important;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 18L18 6M6 6l12 12'/></svg>") no-repeat center / contain !important;
+}
+
+
+.theme-entry div.popup.dialog.sub-form .popup-body,
+.theme-entry div.popup.dialog.sub-view .popup-body {
+    background-color: transparent !important; 
+    padding: 20px !important;
 }

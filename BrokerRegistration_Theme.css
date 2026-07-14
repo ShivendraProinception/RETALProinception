@@ -713,7 +713,7 @@ span[name="dlbApplicationStatus"].status-suspended::before {
 
 
 
-[name="btnContinueButton"],[name="btnReviewButton"]::after {
+[name="btnContinueButton"]::after,[name="btnReviewButton"]::after {
     content: "" !important;
     display: inline-block !important;
     width: 16px !important;

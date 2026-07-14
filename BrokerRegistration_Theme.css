@@ -571,7 +571,7 @@ html body .theme-entry .input-control.hidden {
     8 Pill Styling based on Name
 ========================================================*/
 
-span[name="dlbApplicationStatus"] {
+.theme-entry span[name="dlbApplicationStatus"] {
     display: inline-flex !important;
     align-items: center !important;
     gap: 6px !important;
@@ -583,7 +583,7 @@ span[name="dlbApplicationStatus"] {
 }
 
 /* Dot same as Prototype*/
-span[name="dlbApplicationStatus"]::before {
+.theme-entry span[name="dlbApplicationStatus"]::before {
     content: '';
     display: inline-block;
     width: 6px;
@@ -594,42 +594,42 @@ span[name="dlbApplicationStatus"]::before {
 /* 4. Conditional Classes (JS will add these) */
 
 /* OK State (Active, Submitted) */
-span[name="dlbApplicationStatus"].status-ok {
+.theme-entry span[name="dlbApplicationStatus"].status-ok {
     background: var(--ok-soft) !important;
     color: var(--ok-color) !important;
 }
 
-span[name="dlbApplicationStatus"].status-ok::before {
+.theme-entry span[name="dlbApplicationStatus"].status-ok::before {
     background-color: var(--ok-color) !important;
 }
 
 /* Warn State (Expiring soon, Pending approval) */
-span[name="dlbApplicationStatus"].status-warn {
+.theme-entry span[name="dlbApplicationStatus"].status-warn {
     background: var(--warn-soft) !important;
     color: var(--warn-color) !important;
 }
 
-span[name="dlbApplicationStatus"].status-warn::before {
+.theme-entry span[name="dlbApplicationStatus"].status-warn::before {
     background-color: var(--warn-color) !important;
 }
 
 /* Danger State (Rejected) */
-span[name="dlbApplicationStatus"].status-danger {
+.theme-entry span[name="dlbApplicationStatus"].status-danger {
     background: var(--danger-soft) !important;
     color: var(--danger-color) !important;
 }
 
-span[name="dlbApplicationStatus"].status-danger::before {
+.theme-entry span[name="dlbApplicationStatus"].status-danger::before {
     background-color: var(--danger-color) !important;
 }
 
 /* Suspended State */
-span[name="dlbApplicationStatus"].status-suspended {
+.theme-entry span[name="dlbApplicationStatus"].status-suspended {
     background: var(--suspended-soft) !important;
     color: var(--suspended-color) !important;
 }
 
-span[name="dlbApplicationStatus"].status-suspended::before {
+.theme-entry span[name="dlbApplicationStatus"].status-suspended::before {
     background-color: var(--suspended-color) !important;
 }
 

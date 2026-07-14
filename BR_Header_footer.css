@@ -601,7 +601,7 @@ span[name="dlbApplicationStatus"].status-suspended::before {
 9. Error Message Pill
 ============================================================*/
 
-span[name="dlbErrorMsg"]{
+.theme-entry span[name="dlbErrorMsg"]{
     margin: 1rem auto !important;
     font-weight: Normal !important;
     font-style: var(--font-body);
@@ -614,6 +614,46 @@ span[name="dlbErrorMsg"]{
     width: 100%  !important;
 }
 
+[name="dlbErrorMsg"]::before {
+    content: "" !important;
+    display: inline-block !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-color: currentColor !important;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'/><path d='m9 12 2 2 4-4' /></svg>") no-repeat center !important;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'/><path d='m9 12 2 2 4-4' /></svg>") no-repeat center !important;
+}
+
+
+.theme-entry span[name="dlbErrorMsg"] {
+    display: flex !important;           
+    align-items: center !important;     
+    gap: 6px !important;                
+    margin: 1rem auto !important;
+    font-weight: normal !important;     
+    font-family: var(--font-body) !important; 
+    font-size: 13px !important;
+    background-color: var(--warn-soft) !important;
+    color: var(--warn-color) !important;
+    padding: 10px !important;
+    border-radius: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important; 
+}
+
+/* Icon (::before) */
+[name="dlbErrorMsg"]::before {
+    content: "" !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-color: currentColor !important;
+    
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path stroke-linecap='round' stroke-linejoin='round' d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'/><path stroke-linecap='round' stroke-linejoin='round' d='m9 12 2 2 4-4' /></svg>") no-repeat center / contain !important;
+    
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path stroke-linecap='round' stroke-linejoin='round' d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'/><path stroke-linecap='round' stroke-linejoin='round' d='m9 12 2 2 4-4' /></svg>") no-repeat center / contain !important;
+}
 
 /*==========================================================
 10. Track Application Page Specific changes
@@ -624,18 +664,18 @@ span[name="dlbErrorMsg"]{
     width: 16px !important;
     height: 16px !important;
     background-color: currentColor !important;
-    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path stroke-linecap='round' stroke-linejoin='round' d='M5 12h14M13 6l6 6-6 6' /></svg>") no-repeat center !important;
-    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path stroke-linecap='round' stroke-linejoin='round' d='M5 12h14M13 6l6 6-6 6' /></svg>") no-repeat center !important;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z'/></svg>") no-repeat center !important;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z'/></svg>") no-repeat center !important;
 }
 
 .theme-entry div[name="TrackApplicationItemView"] {
     background: transparent !important;
 }
 
-div[name="TrackApplicationItemView"] :is(h1, h2, h3, h4, h5, h6) {
+.theme-entry div[name="TrackApplicationItemView"] :is(h1, h2, h3, h4, h5, h6) {
     color: black !important;
 }
 
-div[name="TrackApplicationItemView"] p {
+.theme-entry [name="TrackApplicationItemView"] p {
     color: var(--muted-color) !important;
 }

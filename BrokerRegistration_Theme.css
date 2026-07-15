@@ -970,3 +970,14 @@ html body .theme-entry .input-control.hidden {
     color: #1a1a1a !important;
     font-weight: bold !important;
 }
+
+.theme-entry div[name="ApplicationStatusProgressBar"] .step-container:not(.last)::after {
+    content: '' !important;
+    position: absolute !important;
+    left: 13px !important;
+    top: 26px !important;
+    bottom: -25px !important;
+    width: 2px !important;
+    background-color: #e8e3df !important;
+    z-index: 1 !important;
+}

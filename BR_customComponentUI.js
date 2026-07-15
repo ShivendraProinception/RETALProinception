@@ -82,7 +82,7 @@ $(document).ready(function () {
         
         if (statusLabel.length > 0) {
             var rawText = statusLabel.text().trim();
-            var currentText = rawText.ToLowerCase();
+            var currentText = rawText.toLowerCase();
             var appliedStatus = statusLabel.attr('data-applied-status');
             
             // Check if the text is updated and is not empty
@@ -103,7 +103,7 @@ $(document).ready(function () {
                 else if (currentText == 'rejected') {
                     statusLabel.addClass('status-danger');
                 } 
-                else if (currentText == 'suspended') {
+                else if (currentText == 's  uspended') {
                     statusLabel.addClass('status-suspended');
                 }
             }

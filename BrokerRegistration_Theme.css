@@ -911,18 +911,6 @@ html body .theme-entry .input-control.hidden {
     margin-top: 0 !important;
 }
 
-/* Custom Vertical Connecting Line */
-.theme-entry div[name="ApplicationStatusProgressBar"] .step-container:not(.last)::after {
-    content: '' !important;
-    position: absolute !important;
-    left: 13px !important; /* Circle ke centre se line map karne ke liye */
-    top: 26px !important; /* Circle ke theek neeche se start hogi */
-    bottom: -25px !important;
-    width: 2px !important;
-    background-color: #e8e3df !important;
-    z-index: 1 !important;
-}
-
 
 /* ========================================== */
 /* 13.a  COLORS, ICONS AUR STATUS LOGIC          */
@@ -970,8 +958,4 @@ html body .theme-entry .input-control.hidden {
 .theme-entry div[name="ApplicationStatusProgressBar"] .step-container.inprogress .title {
     color: #1a1a1a !important;
     font-weight: bold !important;
-}
-
-.theme-entry div[name="ApplicationStatusProgressBar"] .step-container:not(.last) .step::after {
-    display: none !important;
 }

@@ -81,7 +81,8 @@ $(document).ready(function () {
         var statusLabel = $('span[name="dlbApplicationStatus"]');
         
         if (statusLabel.length > 0) {
-            var currentText = statusLabel.text().trim();
+            var rawText = statusLabel.text().trim();
+            var currentText = rawText.ToLowerCase();
             var appliedStatus = statusLabel.attr('data-applied-status');
             
             // Check if the text is updated and is not empty
@@ -93,16 +94,16 @@ $(document).ready(function () {
                 statusLabel.removeClass('status-ok status-warn status-danger status-suspended');
                 
                 // Based on current text apply correct class
-                if (currentText == 'Submitted' || currentText == 'Active' || currentText == 'Approved & active') {
+                if (currentText == 'submitted' || currentText == 'active' || currentText == 'approved & active') {
                     statusLabel.addClass('status-ok');
                 } 
-                else if (currentText == 'Expiring soon' || currentText == 'Pending approval' || currentText == 'Under Review By Retal') {
+                else if (currentText == 'expiring soon' || currentText == 'pending approval' || currentText == 'under review by retal') {
                     statusLabel.addClass('status-warn');
                 } 
-                else if (currentText == 'Rejected') {
+                else if (currentText == 'rejected') {
                     statusLabel.addClass('status-danger');
                 } 
-                else if (currentText == 'Suspended') {
+                else if (currentText == 'suspended') {
                     statusLabel.addClass('status-suspended');
                 }
             }

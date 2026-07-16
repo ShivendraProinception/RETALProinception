@@ -190,19 +190,40 @@
 
     .theme-entry div[name='Header_Div'] img{
         height: 26px !important;
+        margin-left: 1rem !important;
     }
 
-      .theme-entry  .rf-top {
-            grid-template-columns: 1fr !important;
-            gap: 28px !important;
-        }
+    .theme-entry  .rf-top {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+    }
 
-    .theme-entry a[name="btnTrackApplication"]{
-        margin-top: 1rem !important;
+    .theme-entry [name='valBand']{
+        padding: 1rem !important;
     }
 
     .theme-entry [name="tblStartAndSignin"]{
         display: flex !important;
         flex-direction: column !important;
     }
+
+    .theme-entry a.SourceCode-Forms-Controls-Web-Button, .theme-entry .SourceCode-Forms-Controls-Web-Button{
+        padding: clamp(5px, 2vw, 16px) clamp(5px, 0vw, 30px) !important;
     }
+
+    .theme-entry [name="tblAlreadySigned"]{
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: baseline !important;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .theme-entry span:has(a[name="btnStartRegistration"]):has(a[name="btnTrackApplication"]) {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-self: baseline !important;
+    gap: 12px;
+}
+}

@@ -119,6 +119,7 @@ For all views border radius setting (commented as of now as there might be some 
 .theme-entry h3 {
     font-family: var(--font-title), serif !important;
     font-weight: normal !important;
+    text-wrap: auto !important;
 }
 
 .theme-entry .SourceCode-Forms-Controls-Web-Control,
@@ -169,7 +170,7 @@ html body .theme-entry .input-control.hidden {
     align-items: center !important;
     gap: 10px !important;
     justify-content: center !important;
-    padding: 16px 30px !important;
+    padding: clamp(5px, 2vw, 16px) clamp(5px, 2vw, 30px)!important;
     border-radius: 0px !important;
     font-family: var(--font-body) !important;
     font-size: 14px !important;
@@ -199,6 +200,11 @@ html body .theme-entry .input-control.hidden {
     border: 1px solid var(--color-primary) !important;
 }
 
+
+
+/*=============================
+        HEADER DESIGNING
+===============================*/
 
 .theme-entry a[name="btnLanguage"] {
     color: var(--color-primary) !important;

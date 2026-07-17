@@ -967,3 +967,126 @@ html body .theme-entry .input-control.hidden {
     color: #1a1a1a !important;
     font-weight: bold !important;
 }
+
+
+/* =========================================================
+   K2 TREE CONTROL -> PREMIUM SIDEBAR MENU
+========================================================= */
+
+/* 1. Main Sidebar Container Styling */
+.theme-entry div[name="asideNavigationMenu"] {
+    background-color: #3d3935 !important;
+    height: 100vh !important;
+    padding: 24px 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+/* 2. K2 Default Kachra Hide Karna (Expander +/-, Watermark) */
+.theme-entry div[name="asideNavigationMenu"] .PART-expander-clickable-area,
+.theme-entry div[name="asideNavigationMenu"] .image-container,
+.theme-entry div[name="asideNavigationMenu"] .watermark {
+    display: none !important;
+}
+
+/* 3. Remove all K2 default paddings and margins */
+.theme-entry div[name="asideNavigationMenu"] ul.node-container {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* =========================================
+   LEVEL 0: MAIN HEADERS (BROKERS, REVIEW, SETUP)
+========================================= */
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="0"] > .content {
+    padding: 24px 24px 8px 24px !important;
+    cursor: default !important;
+    background: transparent !important;
+}
+
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="0"] > .content .text {
+    color: #9a8c83 !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* =========================================
+   LEVEL 1: CHILD LINKS (All Brokers, Admin, etc.)
+========================================= */
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"] > .content {
+    padding: 12px 16px !important;
+    margin: 4px 16px !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Normal State Text */
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"] > .content .text {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+/* Hover State */
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"]:hover > .content {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Active / Selected State (Brand Color) */
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"].selected > .content,
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"][aria-selected="true"] > .content {
+    background-color: #af6b48 !important;
+}
+
+/* =========================================
+   CUSTOM ICONS (Based on Text Names)
+========================================= */
+/* 'All Brokers' Icon */
+.theme-entry div[name="asideNavigationMenu"] span[title="All Brokers"]::before {
+    content: '';
+    display: inline-block;
+    width: 18px; height: 18px;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>');
+    background-size: contain; background-repeat: no-repeat;
+}
+
+/* 'Approvals' Icon */
+.theme-entry div[name="asideNavigationMenu"] span[title="Approvals (Worklist)"]::before {
+    content: ''; display: inline-block; width: 18px; height: 18px;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>');
+    background-size: contain; background-repeat: no-repeat;
+}
+
+/* 'Admin' Icon */
+.theme-entry div[name="asideNavigationMenu"] span[title="Admin / Configuration"]::before {
+    content: ''; display: inline-block; width: 18px; height: 18px;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>');
+    background-size: contain; background-repeat: no-repeat;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobile Slide-out)
+========================================= */
+@media (max-width: 900px) {
+    .theme-entry div[name="asideNavigationMenu"] {
+        position: fixed !important;
+        top: 0 !important;
+        left: -320px !important;
+        width: 280px !important;
+        z-index: 9999 !important;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 4px 0 24px rgba(0,0,0,0.5) !important;
+    }
+
+    .theme-entry div[name="asideNavigationMenu"].sidebar-open {
+        left: 0 !important;
+    }
+}

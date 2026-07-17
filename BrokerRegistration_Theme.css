@@ -980,6 +980,7 @@ html body .theme-entry .input-control.hidden {
     padding: 24px 0 !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
+    text-wrap: auto !important;
 }
 
 /* 2. K2 Default Kachra Hide Karna (Expander +/-, Watermark) */
@@ -1046,6 +1047,13 @@ html body .theme-entry .input-control.hidden {
     background-color: #af6b48 !important;
 }
 
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"].selected > .content .PART-header-clickable-area,
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"][aria-selected="true"] > .content .PART-header-clickable-area {
+    background-color: #af6b48 !important;
+    border: none !important;
+}
+
+
 /* =========================================
    CUSTOM ICONS (Based on Text Names)
 ========================================= */
@@ -1072,6 +1080,12 @@ html body .theme-entry .input-control.hidden {
     background-size: contain; background-repeat: no-repeat;
 }
 
+
+/*Hide Hamburger Menu*/
+.theme-entry .menu-btn{
+    display: none !important;
+}
+
 /* =========================================
    RESPONSIVE DESIGN (Mobile Slide-out)
 ========================================= */
@@ -1088,5 +1102,16 @@ html body .theme-entry .input-control.hidden {
 
     .theme-entry div[name="asideNavigationMenu"].sidebar-open {
         left: 0 !important;
+    }
+
+    .theme-entry .menu-btn{
+        display: flex !important;
+        width: 5rem !important;
+        height: 5rem !important;
+        border-radius: 10px !important;
+        border: 1px solid black !important;
+        align-items: center !important;
+        background: white !important;
+        justify-content: center !important;
     }
 }

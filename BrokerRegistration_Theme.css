@@ -1104,6 +1104,27 @@ html body .theme-entry .input-control.hidden {
         left: 0 !important;
     }
 
+    .theme-entry div.formcontrol{
+        width: 100% !important;
+    }
+
+    .theme-entry div.view:has(div[name="navigationMenuView"]) {
+        position: fixed !important;
+        top: 0 !important;
+        left: -320px !important;
+        width: 280px !important;
+        height: 100vh !important;
+        z-index: 9999 !important;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 4px 0 24px rgba(0,0,0,0.5) !important;
+        margin: 0 !important;
+        display: block !important;
+    }
+
+    .theme-entry div.view.sidebar-open:has(div[name="navigationMenuView"]) {
+        left: 0 !important;
+    }
+
     .theme-entry .menu-btn{
         display: flex !important;
         width: 5rem !important;

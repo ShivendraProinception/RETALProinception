@@ -170,7 +170,7 @@ html body .theme-entry .input-control.hidden {
     align-items: center !important;
     gap: 10px !important;
     justify-content: center !important;
-    padding: clamp(5px, 2vw, 16px) clamp(5px, 2vw, 30px)!important;
+    padding: clamp(5px, 2vw, 16px) clamp(5px, 2vw, 30px) !important;
     border-radius: 0px !important;
     font-family: var(--font-body) !important;
     font-size: 14px !important;
@@ -182,7 +182,7 @@ html body .theme-entry .input-control.hidden {
     transition: all 0.3s ease !important;
 }
 
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
     text-wrap: auto !important;
 }
 
@@ -897,7 +897,8 @@ html body .theme-entry .input-control.hidden {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    pointer-events: none !important; /* Clicks disable karne ke liye */
+    pointer-events: none !important;
+    /* Clicks disable karne ke liye */
     cursor: default !important;
 }
 
@@ -929,13 +930,16 @@ html body .theme-entry .input-control.hidden {
     width: 26px !important;
     height: 26px !important;
     border-radius: 50% !important;
-    background-color: #e8e3df !important; /* Blank Grey Background */
-    border: none !important; /* K2 ki default border hatana */
+    background-color: #e8e3df !important;
+    /* Blank Grey Background */
+    border: none !important;
+    /* K2 ki default border hatana */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     position: relative !important;
-    z-index: 2 !important; /* Ensure icon vertical line ke upar rahe */
+    z-index: 2 !important;
+    /* Ensure icon vertical line ke upar rahe */
 }
 
 /* ---- NOT STARTED STATE (Blank) ---- */
@@ -944,7 +948,8 @@ html body .theme-entry .input-control.hidden {
 }
 
 .theme-entry div[name="ApplicationStatusProgressBar"] .step-container:not(.completed):not(.inprogress) .title {
-    color: #888888 !important; /* Light text for pending */
+    color: #888888 !important;
+    /* Light text for pending */
     font-weight: normal !important;
 }
 
@@ -952,7 +957,8 @@ html body .theme-entry .input-control.hidden {
 /* ---- COMPLETED & IN-PROGRESS STATE (Green + White SVG) ---- */
 .theme-entry div[name="ApplicationStatusProgressBar"] .step-container.completed .step,
 .theme-entry div[name="ApplicationStatusProgressBar"] .step-container.inprogress .step {
-    background-color: #558b5a !important; /* Aapki image wala Green */
+    background-color: #558b5a !important;
+    /* Aapki image wala Green */
 }
 
 .theme-entry div[name="ApplicationStatusProgressBar"] .step-container.completed .step svg,
@@ -999,13 +1005,13 @@ html body .theme-entry .input-control.hidden {
 /* =========================================
    LEVEL 0: MAIN HEADERS (BROKERS, REVIEW, SETUP)
 ========================================= */
-.theme-entry div[name="asideNavigationMenu"] li.node[data-level="0"] > .content {
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="0"]>.content {
     padding: 24px 24px 8px 24px !important;
     cursor: default !important;
     background: transparent !important;
 }
 
-.theme-entry div[name="asideNavigationMenu"] li.node[data-level="0"] > .content .text {
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="0"]>.content .text {
     color: #9a8c83 !important;
     font-size: 11px !important;
     font-weight: 600 !important;
@@ -1016,7 +1022,7 @@ html body .theme-entry .input-control.hidden {
 /* =========================================
    LEVEL 1: CHILD LINKS (All Brokers, Admin, etc.)
 ========================================= */
-.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"] > .content {
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"]>.content {
     padding: 12px 16px !important;
     margin: 4px 16px !important;
     border-radius: 8px !important;
@@ -1027,7 +1033,7 @@ html body .theme-entry .input-control.hidden {
 }
 
 /* Normal State Text */
-.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"] > .content .text {
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"]>.content .text {
     color: #ffffff !important;
     font-size: 15px !important;
     font-weight: 500 !important;
@@ -1037,18 +1043,18 @@ html body .theme-entry .input-control.hidden {
 }
 
 /* Hover State */
-.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"]:hover > .content {
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"]:hover>.content {
     background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
 /* Active / Selected State (Brand Color) */
-.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"].selected > .content,
-.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"][aria-selected="true"] > .content {
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"].selected>.content,
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"][aria-selected="true"]>.content {
     background-color: #af6b48 !important;
 }
 
-.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"].selected > .content .PART-header-clickable-area,
-.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"][aria-selected="true"] > .content .PART-header-clickable-area {
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"].selected>.content .PART-header-clickable-area,
+.theme-entry div[name="asideNavigationMenu"] li.node[data-level="1"][aria-selected="true"]>.content .PART-header-clickable-area {
     background-color: #af6b48 !important;
     border: none !important;
 }
@@ -1061,28 +1067,38 @@ html body .theme-entry .input-control.hidden {
 .theme-entry div[name="asideNavigationMenu"] span[title="All Brokers"]::before {
     content: '';
     display: inline-block;
-    width: 18px; height: 18px;
+    width: 18px;
+    height: 18px;
     background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>');
-    background-size: contain; background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* 'Approvals' Icon */
 .theme-entry div[name="asideNavigationMenu"] span[title="Approvals (Worklist)"]::before {
-    content: ''; display: inline-block; width: 18px; height: 18px;
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
     background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>');
-    background-size: contain; background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* 'Admin' Icon */
 .theme-entry div[name="asideNavigationMenu"] span[title="Admin / Configuration"]::before {
-    content: ''; display: inline-block; width: 18px; height: 18px;
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
     background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>');
-    background-size: contain; background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 
 /*Hide Hamburger Menu*/
-.theme-entry .menu-btn{
+.theme-entry .menu-btn {
     display: none !important;
 }
 
@@ -1090,6 +1106,7 @@ html body .theme-entry .input-control.hidden {
    RESPONSIVE DESIGN (Mobile Slide-out)
 ========================================= */
 @media (max-width: 900px) {
+
     /* 1. Main Form ko 100% width dena */
     .theme-entry div.formcontrol {
         width: 100% !important;
@@ -1104,10 +1121,11 @@ html body .theme-entry .input-control.hidden {
         height: 100vh !important;
         z-index: 9999 !important;
         transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        box-shadow: 4px 0 24px rgba(0,0,0,0.5) !important;
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5) !important;
         margin: 0 !important;
         display: block !important;
-        background-color: #3d3935 !important; /* White blank fix ke liye Dark BG */
+        background-color: #3d3935 !important;
+        /* White blank fix ke liye Dark BG */
         padding-top: 16px !important;
     }
 
@@ -1125,6 +1143,22 @@ html body .theme-entry .input-control.hidden {
         height: 100% !important;
         width: 100% !important;
         background-color: transparent !important;
+    }
+
+    .theme-entry div[name="asideNavigationMenu"] .stylewrapper,
+    .theme-entry div[name="asideNavigationMenu"] .tree-body,
+    .theme-entry div[name="asideNavigationMenu"] ul.node-container {
+        height: auto !important;
+        min-height: 100% !important;
+        overflow: visible !important;
+        /* Yeh cut hue items ko wapas layega */
+        display: block !important;
+    }
+
+    /* Ensure ki K2 nodes hide na kare */
+    .theme-entry div[name="asideNavigationMenu"] li.node {
+        display: block !important;
+        visibility: visible !important;
     }
 
     /* 5. Aapke Hamburger Button ki Styling (No changes here) */

@@ -1090,25 +1090,13 @@ html body .theme-entry .input-control.hidden {
    RESPONSIVE DESIGN (Mobile Slide-out)
 ========================================= */
 @media (max-width: 900px) {
-    .theme-entry div[name="asideNavigationMenu"] {
-        position: fixed !important;
-        top: 0 !important;
-        left: -320px !important;
-        width: 280px !important;
-        z-index: 9999 !important;
-        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        box-shadow: 4px 0 24px rgba(0,0,0,0.5) !important;
-    }
-
-    .theme-entry div[name="asideNavigationMenu"].sidebar-open {
-        left: 0 !important;
-    }
-
-    .theme-entry div.formcontrol{
+    /* 1. Main Form ko 100% width dena */
+    .theme-entry div.formcontrol {
         width: 100% !important;
     }
 
-    .theme-entry div.view:has(div[name="navigationMenuView"]) {
+    /* 2. Master View (Slide-out panel) jisme JS class laga rahi hai */
+    .theme-entry .sidebar-master-view {
         position: fixed !important;
         top: 0 !important;
         left: -320px !important;
@@ -1119,13 +1107,28 @@ html body .theme-entry .input-control.hidden {
         box-shadow: 4px 0 24px rgba(0,0,0,0.5) !important;
         margin: 0 !important;
         display: block !important;
+        background-color: #3d3935 !important; /* White blank fix ke liye Dark BG */
+        padding-top: 16px !important;
     }
 
-    .theme-entry div.view.sidebar-open:has(div[name="navigationMenuView"]) {
+    /* 3. Slide-in Animation */
+    .theme-entry .sidebar-master-view.sidebar-open {
         left: 0 !important;
     }
 
-    .theme-entry .menu-btn{
+    /* 4. FORCE SHOW INNER PANELS (Iske bina menu content nahi dikhega) */
+    .theme-entry .sidebar-master-view .innerpanel,
+    .theme-entry .sidebar-master-view div[name="navigationMenuView"],
+    .theme-entry div[name="asideNavigationMenu"] {
+        display: block !important;
+        visibility: visible !important;
+        height: 100% !important;
+        width: 100% !important;
+        background-color: transparent !important;
+    }
+
+    /* 5. Aapke Hamburger Button ki Styling (No changes here) */
+    .theme-entry .menu-btn {
         display: flex !important;
         width: 5rem !important;
         height: 5rem !important;

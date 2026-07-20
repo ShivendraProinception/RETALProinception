@@ -1107,36 +1107,36 @@ html body .theme-entry .input-control.hidden {
 ========================================= */
 @media (max-width: 900px) {
 
-    /* 1. Main Form ko 100% width dena */
+    /* Main Form width */
     .theme-entry div.formcontrol {
         width: 100% !important;
     }
 
-    /* 2. Master View (Slide-out panel) jisme JS class laga rahi hai */
+    /* 1. Master View (The K2 Render Cheat) */
     .theme-entry .sidebar-master-view {
         position: fixed !important;
         top: 0 !important;
-        left: -320px !important;
+        left: 0 !important; /* Left 0 hi rahega taaki K2 DOM draw kar le */
+        transform: translateX(-110%) !important; /* Visual hide using Transform */
         width: 280px !important;
         height: 100vh !important;
-        z-index: 9999 !important;
-        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        z-index: 99999 !important; /* Elevated Z-index */
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
         box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5) !important;
         margin: 0 !important;
         display: block !important;
         background-color: #3d3935 !important;
-        /* White blank fix ke liye Dark BG */
         padding-top: 16px !important;
     }
 
-    /* 3. Slide-in Animation */
+    /* Slide-in Animation via Transform */
     .theme-entry .sidebar-master-view.sidebar-open {
-        left: 0 !important;
+        transform: translateX(0) !important; 
     }
 
-    /* 4. FORCE SHOW INNER PANELS (Iske bina menu content nahi dikhega) */
+    /* 2. FORCE SHOW INNER PANELS & K2 NODES */
     .theme-entry .sidebar-master-view .innerpanel,
-    .theme-entry .sidebar-master-view .formcontrol,
+    .theme-entry .sidebar-master-view div[name="navigationMenuView"],
     .theme-entry div[name="asideNavigationMenu"] {
         display: block !important;
         visibility: visible !important;
@@ -1145,23 +1145,21 @@ html body .theme-entry .input-control.hidden {
         background-color: transparent !important;
     }
 
+    /* K2 Mobile Mode overrides (Force show lazy-loaded tree nodes) */
     .theme-entry div[name="asideNavigationMenu"] .stylewrapper,
     .theme-entry div[name="asideNavigationMenu"] .tree-body,
-    .theme-entry div[name="asideNavigationMenu"] ul.node-container {
+    .theme-entry div[name="asideNavigationMenu"] ul.node-container,
+    .theme-entry div[name="asideNavigationMenu"] div.nodes,
+    .theme-entry div[name="asideNavigationMenu"] li.node {
         height: auto !important;
         min-height: 100% !important;
         overflow: visible !important;
-        /* Yeh cut hue items ko wapas layega */
-        display: block !important;
-    }
-
-    /* Ensure ki K2 nodes hide na kare */
-    .theme-entry div[name="asideNavigationMenu"] li.node {
         display: block !important;
         visibility: visible !important;
+        opacity: 1 !important;
     }
 
-    /* 5. Aapke Hamburger Button ki Styling (No changes here) */
+    /* 3. Hamburger Button Styling & SVG Steal Fix */
     .theme-entry .menu-btn {
         display: flex !important;
         width: 5rem !important;
@@ -1171,5 +1169,13 @@ html body .theme-entry .input-control.hidden {
         align-items: center !important;
         background: white !important;
         justify-content: center !important;
+        position: relative !important;
+        z-index: 999999 !important; /* Ensure it stays above K2 overlays */
+    }
+
+    /* Block SVG from stealing button clicks */
+    .theme-entry .menu-btn svg, 
+    .theme-entry .menu-btn path {
+        pointer-events: none !important; 
     }
 }

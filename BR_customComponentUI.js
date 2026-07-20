@@ -109,49 +109,5 @@ $(document).ready(function () {
             }
         }
     }, 500);
-
-    // =========================================================
-    // 3. K2 SIDEBAR LOGIC (Fix for Mobile Render)
-    // =========================================================
-    
-    // Helper function to dynamically grab the correct view container
-    function getSidebarView() {
-        var $view = $('div[name="asideNavigationMenu"]').closest('.view');
-        if ($view.length === 0) {
-            $view = $('div[name="asideNavigationMenu"]').closest('.panel');
-        }
-        if ($view.length > 0 && !$view.hasClass('sidebar-master-view')) {
-            $view.addClass('sidebar-master-view');
-        }
-        return $view;
-    }
-
-    // 1. Hamburger Click Event (Bind to document for dynamically generated mobile overlays)
-    $(document).off('click.hamburger').on('click.hamburger', '.menu-btn', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        var $sidebar = getSidebarView();
-        $sidebar.toggleClass('sidebar-open');
-        console.log("Hamburger Clicked! Status: " + $sidebar.hasClass('sidebar-open'));
-    });
-
-    // 2. Child Link Click pe Menu hide karna
-    $(document).off('click.menuitem').on('click.menuitem', 'div[name="asideNavigationMenu"] li.node[data-level="1"]', function() {
-        if ($(window).width() <= 900) {
-            getSidebarView().removeClass('sidebar-open');
-        }
-    });
-
-    // 3. Bahar click karne pe Menu hide karna
-    $(document).off('click.outside').on('click.outside', function(e) {
-        if ($(window).width() <= 900) {
-            var $menuWrapper = getSidebarView();
-            var $hamburger = $('.menu-btn');
-            if ($menuWrapper.length > 0 && !$menuWrapper.is(e.target) && $menuWrapper.has(e.target).length === 0 && 
-                !$hamburger.is(e.target) && $hamburger.has(e.target).length === 0) {
-                $menuWrapper.removeClass('sidebar-open');
-            }
-        }
-    });
+   
 });

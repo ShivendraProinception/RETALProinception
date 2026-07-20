@@ -1136,7 +1136,7 @@ html body .theme-entry .input-control.hidden {
 
     /* 4. FORCE SHOW INNER PANELS (Iske bina menu content nahi dikhega) */
     .theme-entry .sidebar-master-view .innerpanel,
-    .theme-entry .sidebar-master-view div[name="navigationMenuView"],
+    .theme-entry .sidebar-master-view .formcontrol,
     .theme-entry div[name="asideNavigationMenu"] {
         display: block !important;
         visibility: visible !important;

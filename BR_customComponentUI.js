@@ -109,4 +109,56 @@ $(document).ready(function () {
             }
         }
     }, 500);
+
+    // =========================================================
+    // 3. K2 SIDEBAR LOGIC
+    // =========================================================
+    setTimeout(function() {
+        console.log("K2 Sidebar Script Loaded!");
+
+        function getSidebarView() {
+            var $view = $('div[name="asideNavigationMenu"]').closest('.view');
+            if ($view.length === 0) {
+                $view = $('div[name="asideNavigationMenu"]').closest('.panel');
+            }
+            if (!$view.hasClass('sidebar-master-view')) {
+                $view.addClass('sidebar-master-view');
+                console.log("Sidebar Master Class Added to View!");
+            }
+            return $view;
+        }
+
+        getSidebarView();
+
+        $(document).off('click.hamburger').on('click.hamburger', '.menu-btn, .menu-btn *', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            var $sidebar = getSidebarView();
+            $sidebar.toggleClass('sidebar-open');
+            
+            if($sidebar.hasClass('sidebar-open')) {
+                console.log("Hamburger Clicked! Menu OPENED");
+            } else {
+                console.log(" Hamburger Clicked! Menu CLOSED");
+            }
+        });
+
+        $(document).off('click.menuitem').on('click.menuitem', 'div[name="asideNavigationMenu"] li.node[data-level="1"]', function() {
+            if ($(window).width() <= 900) {
+                getSidebarView().removeClass('sidebar-open');
+            }
+        });
+
+        $(document).off('click.outside').on('click.outside', function(e) {
+            if ($(window).width() <= 900) {
+                var $menuWrapper = getSidebarView();
+                var $hamburger = $('.menu-btn');
+                if (!$menuWrapper.is(e.target) && $menuWrapper.has(e.target).length === 0 && 
+                    !$hamburger.is(e.target) && $hamburger.has(e.target).length === 0) {
+                    $menuWrapper.removeClass('sidebar-open');
+                }
+            }
+        });
+    }, 500);
 });

@@ -1101,3 +1101,16 @@ html body .theme-entry .input-control.hidden {
 .theme-entry .menu-btn {
     display: none !important;
 }
+
+
+/* Parent headers (BROKERS, REVIEW, SETUP) click disable */
+div[name="asideNavigationMenu"] li.node[data-level="0"] > .content .PART-header-clickable-area {
+    pointer-events: none !important; /* Mouse click completely block */
+    cursor: default !important;      /* Arrow cursor ( no pointer) */
+}
+
+/* Ensure Child nodes (Level 1) normally clickable */
+div[name="asideNavigationMenu"] li.node[data-level="1"] > .content .PART-header-clickable-area {
+    pointer-events: auto !important; 
+    cursor: pointer !important;
+}

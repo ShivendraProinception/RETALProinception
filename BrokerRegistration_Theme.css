@@ -169,9 +169,9 @@ html body .theme-entry .input-control.hidden {
     vertical-align: middle !important;
 }
 
-.theme-entry .grid table.grid-content-table tr.selected>td{
+.theme-entry .grid table.grid-content-table tr.selected>td {
     background-color: #dcd8e4 !important;
-} 
+}
 
 
 .theme-entry a.SourceCode-Forms-Controls-Web-Button,
@@ -1114,14 +1114,16 @@ html body .theme-entry .input-control.hidden {
 
 
 /* Parent headers (BROKERS, REVIEW, SETUP) click disable */
-div[name="asideNavigationMenu"] li.node[data-level="0"] > .content .PART-header-clickable-area {
-    pointer-events: none !important; /* Mouse click completely block */
-    cursor: default !important;      /* Arrow cursor ( no pointer) */
+div[name="asideNavigationMenu"] li.node[data-level="0"]>.content .PART-header-clickable-area {
+    pointer-events: none !important;
+    /* Mouse click completely block */
+    cursor: default !important;
+    /* Arrow cursor ( no pointer) */
 }
 
 /* Ensure Child nodes (Level 1) normally clickable */
-div[name="asideNavigationMenu"] li.node[data-level="1"] > .content .PART-header-clickable-area {
-    pointer-events: auto !important; 
+div[name="asideNavigationMenu"] li.node[data-level="1"]>.content .PART-header-clickable-area {
+    pointer-events: auto !important;
     cursor: pointer !important;
 }
 
@@ -1129,32 +1131,63 @@ div[name="asideNavigationMenu"] li.node[data-level="1"] > .content .PART-header-
 
 /*Worklist control*/
 
-    .theme-entry .SourceCode-Forms-Controls-Web-ControlPack-Worklist .SourceCodeFormsControlsWorklist{
-        border-radius: 1rem !important;
-    }
+.theme-entry .SourceCode-Forms-Controls-Web-ControlPack-Worklist .SourceCodeFormsControlsWorklist {
+    border-radius: 1rem !important;
+}
 
-    .theme-entry .WorkListGridHeader {
-        background-color: #AF6B48 !important;
-    }
+.theme-entry .WorkListGridHeader {
+    background-color: #AF6B48 !important;
+}
 
-    .theme-entry .worklist-grid-column-header-cell-text {
+.theme-entry .worklist-grid-column-header-cell-text {
 
-        font-weight: bold !important;
-        color: #ffffff !important;
-    }
+    font-weight: bold !important;
+    color: #ffffff !important;
+}
 
-    .theme-entry .WorklistItemGridRow .style-aware .worklist-grid-odd .SelectedDivBackground{
-        background-color: var(--muted-color) !important;
-    }
+.theme-entry .WorklistItemGridRow .style-aware .worklist-grid-odd .SelectedDivBackground {
+    background-color: var(--muted-color) !important;
+}
 
-    .theme-entry .SourceCodeFormsControlsWorklist .worklist-grid-odd{
-        background-color: #ffffff !important;
-    }
+.theme-entry .SourceCodeFormsControlsWorklist .worklist-grid-odd {
+    background-color: #ffffff !important;
+}
 
 
-    /*ADMIN CONFIG PAGE*/
+/*ADMIN CONFIG PAGE*/
 
-    .theme-entry div[name="AdminCommissionRate_View"] span.SFC,
-    .theme-entry div[name="AdminCommissionRate_View"] span.SourceCode-Forms-Controls-Web-Label span.LabelWrap {
-        font-size: 13pt !important;
-    }
+.theme-entry div[name="AdminCommissionRate_View"] span.SFC,
+.theme-entry div[name="AdminCommissionRate_View"] span.SourceCode-Forms-Controls-Web-Label span.LabelWrap {
+    font-size: 13pt !important;
+}
+
+
+/*All Broker Page*/
+
+
+.theme-entry div[name="All_Brokers_View"].grid .grid-body-content td {
+    vertical-align: middle !important;
+}
+
+.theme-entry .grid .grid-column-headers-wrapper {
+    padding: 5px !important;
+}
+
+/* View background transparent */
+.theme-entry div[name="All_Brokers_View"] {
+    background-color: transparent !important;
+}
+
+/* Tool Bar common */
+.theme-entry div[name="All_Brokers_View"] a[name="ToolBarButton_All"] {
+    background: var(--color-primary) !important;
+    padding: 0.5rem 2rem !important;
+    font-weight: 400 !important;
+    border-radius: 2rem !important;
+    border: 3px solid white !important;
+}
+
+/* Text Inside button */
+.theme-entry div[name="All_Brokers_View"] a[name="ToolBarButton_All"] *{
+    color: white !important;
+}

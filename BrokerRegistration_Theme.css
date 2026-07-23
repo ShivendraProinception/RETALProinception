@@ -1150,3 +1150,10 @@ div[name="asideNavigationMenu"] li.node[data-level="1"] > .content .PART-header-
     .theme-entry .SourceCodeFormsControlsWorklist .worklist-grid-odd{
         background-color: #ffffff !important;
     }
+
+
+    /*ADMIN CONFIG PAGE*/
+
+    .theme-entry div[name="AdminCommissionRate_View"] span.SFC, span.SourceCode-Forms-Controls-Web-Label span.LabelWrap{
+        font-size: 13pt !important;
+    }

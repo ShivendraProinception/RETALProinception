@@ -1154,6 +1154,7 @@ div[name="asideNavigationMenu"] li.node[data-level="1"] > .content .PART-header-
 
     /*ADMIN CONFIG PAGE*/
 
-    .theme-entry div[name="AdminCommissionRate_View"] span.SFC, span.SourceCode-Forms-Controls-Web-Label span.LabelWrap{
+    .theme-entry div[name="AdminCommissionRate_View"] span.SFC,
+    .theme-entry div[name="AdminCommissionRate_View"] span.SourceCode-Forms-Controls-Web-Label span.LabelWrap {
         font-size: 13pt !important;
     }

@@ -164,9 +164,15 @@ html body .theme-entry .input-control.hidden {
     display: none !important;
 }
 
+
+.theme-entry .grid-content-table tbody tr>td {
+    vertical-align: middle !important;
+}
+
 .theme-entry .grid table.grid-content-table tr.selected>td{
-    background-color: #F6F1EE !important;
+    background-color: #dcd8e4 !important;
 } 
+
 
 .theme-entry a.SourceCode-Forms-Controls-Web-Button,
 .theme-entry .SourceCode-Forms-Controls-Web-Button {

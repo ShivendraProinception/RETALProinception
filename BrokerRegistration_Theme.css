@@ -351,6 +351,9 @@ html body .theme-entry .input-control.hidden {
     background: transparent !important;
 }
 
+.theme-entry div[name="Common_Navigation"] p {
+    color: #9a8c83 !important;
+}
 
 .theme-entry a[name="btnCancel"] {
     color: #7d5240 !important;
@@ -1181,10 +1184,19 @@ div[name="asideNavigationMenu"] li.node[data-level="1"]>.content .PART-header-cl
 
 .theme-entry div[name="All_Brokers_View"].grid .grid-body-content td {
     vertical-align: middle !important;
+    padding: 0 1rem !important;
 }
 
-.theme-entry .grid .grid-column-headers-wrapper {
+.theme-entry .grid-body-content td div.grid-content-cell-wrapper p {
+    text-wrap: auto !important;
+}
+
+.theme-entry div.grid-body-content-wrapper{
+    border-radius: 0 0 1rem 1rem !important;
+}
+.theme-entry div[name="All_Brokers_View"] .grid-column-headers-wrapper {
     padding: 5px !important;
+    border-radius: 1rem 1rem 0 0 !important;
 }
 
 /* View background transparent */

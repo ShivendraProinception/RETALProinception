@@ -103,7 +103,7 @@ $(document).ready(function () {
                 else if (currentText == 'rejected') {
                     statusLabel.addClass('status-danger');
                 } 
-                else if (currentText == 's  uspended') {
+                else if (currentText == 'suspended') {
                     statusLabel.addClass('status-suspended');
                 }
             }

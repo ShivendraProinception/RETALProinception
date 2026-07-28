@@ -131,7 +131,7 @@ $(document).ready(function () {
                 $thisLabel.removeClass('status-ok status-warn status-danger status-suspended');
                 
                 // Based on current text apply correct class
-                if (currentText == 'submitted' || currentText == 'active' || currentText == 'approved & active') {
+                if (currentText == 'submitted' || currentText == 'active' || currentText == 'approved & active' || currentText == 'approved by retal') {
                     $thisLabel.addClass('status-ok');
                 } 
                 else if (currentText == 'expiring soon' || currentText == 'pending approval' || currentText == 'under review by retal') {
@@ -140,7 +140,7 @@ $(document).ready(function () {
                 else if (currentText == 'rejected') {
                     $thisLabel.addClass('status-danger');
                 } 
-                else if (currentText == 'suspended') {
+                else if (currentText == 'suspended' || currentText == 'e-sign pending') {
                     $thisLabel.addClass('status-suspended');
                 }
             }

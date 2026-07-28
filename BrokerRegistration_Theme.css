@@ -470,6 +470,7 @@ html body .theme-entry .input-control.hidden {
     flex-shrink: 0 !important;
     margin: 0 !important;
     cursor: default !important;
+    pointer-events: none !important;
 }
 
 .theme-entry div[name="Progress"] .step svg {
@@ -1194,9 +1195,13 @@ div[name="asideNavigationMenu"] li.node[data-level="1"]>.content .PART-header-cl
 .theme-entry div.grid-body-content-wrapper{
     border-radius: 0 0 1rem 1rem !important;
 }
+
+.theme-entry div[name="All_Brokers_View"] .grid-column-headers {
+    border-radius: 1rem 1rem 0 0 !important;
+}
+
 .theme-entry div[name="All_Brokers_View"] .grid-column-headers-wrapper {
     padding: 5px !important;
-    border-radius: 1rem 1rem 0 0 !important;
 }
 
 /* View background transparent */

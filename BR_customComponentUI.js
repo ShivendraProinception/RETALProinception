@@ -77,37 +77,75 @@ $(document).ready(function () {
     // =========================================================
     // DYNAMIC STATUS BADGE LOGIC
     // =========================================================
-    setInterval(function() {
-        var statusLabel = $('span[name="dlbApplicationStatus"]');
+    // setInterval(function() {
+    //     var statusLabel = $('span[name="dlbApplicationStatus"]');
         
-        if (statusLabel.length > 0) {
-            var rawText = statusLabel.text().trim();
+    //     if (statusLabel.length > 0) {
+    //         var rawText = statusLabel.text().trim();
+    //         var currentText = rawText.toLowerCase();
+    //         var appliedStatus = statusLabel.attr('data-applied-status');
+            
+    //         // Check if the text is updated and is not empty
+    //         if (currentText !== appliedStatus && currentText !== "") {
+    //             // Save new status so that status is not repetative
+    //             statusLabel.attr('data-applied-status', currentText);
+                
+    //             // remove old any custom class if added
+    //             statusLabel.removeClass('status-ok status-warn status-danger status-suspended');
+                
+    //             // Based on current text apply correct class
+    //             if (currentText == 'submitted' || currentText == 'active' || currentText == 'approved & active') {
+    //                 statusLabel.addClass('status-ok');
+    //             } 
+    //             else if (currentText == 'expiring soon' || currentText == 'pending approval' || currentText == 'under review by retal') {
+    //                 statusLabel.addClass('status-warn');
+    //             } 
+    //             else if (currentText == 'rejected') {
+    //                 statusLabel.addClass('status-danger');
+    //             } 
+    //             else if (currentText == 'suspended') {
+    //                 statusLabel.addClass('status-suspended');
+    //             }
+    //         }
+    //     }
+    // }, 500);
+
+    setInterval(function() {
+    $('span[name="dlbApplicationStatus"]').each(function() {
+        
+        var $thisLabel = $(this); 
+        
+        // Is span is empty then no need to proceed
+        if ($thisLabel.length > 0) {
+            var rawText = $thisLabel.text().trim();
             var currentText = rawText.toLowerCase();
-            var appliedStatus = statusLabel.attr('data-applied-status');
+            var appliedStatus = $thisLabel.attr('data-applied-status');
             
             // Check if the text is updated and is not empty
             if (currentText !== appliedStatus && currentText !== "") {
+                
                 // Save new status so that status is not repetative
-                statusLabel.attr('data-applied-status', currentText);
+                $thisLabel.attr('data-applied-status', currentText);
                 
                 // remove old any custom class if added
-                statusLabel.removeClass('status-ok status-warn status-danger status-suspended');
+                $thisLabel.removeClass('status-ok status-warn status-danger status-suspended');
                 
                 // Based on current text apply correct class
                 if (currentText == 'submitted' || currentText == 'active' || currentText == 'approved & active') {
-                    statusLabel.addClass('status-ok');
+                    $thisLabel.addClass('status-ok');
                 } 
                 else if (currentText == 'expiring soon' || currentText == 'pending approval' || currentText == 'under review by retal') {
-                    statusLabel.addClass('status-warn');
+                    $thisLabel.addClass('status-warn');
                 } 
                 else if (currentText == 'rejected') {
-                    statusLabel.addClass('status-danger');
+                    $thisLabel.addClass('status-danger');
                 } 
                 else if (currentText == 'suspended') {
-                    statusLabel.addClass('status-suspended');
+                    $thisLabel.addClass('status-suspended');
                 }
             }
         }
-    }, 500);
+    });
+}, 500);
    
 });

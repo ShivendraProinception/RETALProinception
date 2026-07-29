@@ -137,7 +137,7 @@ $(document).ready(function () {
                 else if (currentText == 'expiring soon' || currentText == 'pending approval' || currentText == 'under review by retal') {
                     $thisLabel.addClass('status-warn');
                 } 
-                else if (currentText == 'rejected') {
+                else if (currentText == 'rejected' || currentText == 'rejected by retal') {
                     $thisLabel.addClass('status-danger');
                 } 
                 else if (currentText == 'suspended' || currentText == 'e-sign pending') {

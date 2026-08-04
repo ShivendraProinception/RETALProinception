@@ -191,17 +191,29 @@ $(document).ready(function () {
         else if (e.target.closest('[name="btnEnglish"]')) {
             let combo = document.querySelector('.goog-te-combo');
             if (combo) {
-                combo.selectedIndex = 0;
+                combo.value = ''; 
                 combo.dispatchEvent(new Event('change', { bubbles: true }));
+                
+                try {
+                    var iframe = document.querySelector('iframe.goog-te-banner-frame');
+                    if (iframe) {
+                        var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        var restoreBtn = innerDoc.getElementById(':1.restore');
+                        if (restoreBtn) restoreBtn.click();
+                    }
+                } catch(err) {}
+                
+                
                 document.body.style.direction = 'ltr';
                 document.body.style.textAlign = 'left';
                 document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
                 
-                // EXTRA ADDED: Cookie clear 
-                var baseDomain = location.hostname.includes('.') ? "." + location.hostname.split('.').slice(-2).join('.') : location.hostname;
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + baseDomain;
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                setTimeout(function() {
+                    var baseDomain = location.hostname.includes('.') ? "." + location.hostname.split('.').slice(-2).join('.') : location.hostname;
+                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + baseDomain;
+                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                }, 1000); 
             }
         }
     });

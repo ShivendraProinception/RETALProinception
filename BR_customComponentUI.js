@@ -198,17 +198,23 @@ $(document).ready(function () {
     }
     
     // ==========================================
-    // 2. ENGLISH BUTTON CLICK (THE ULTIMATE FIX)
+    // 2. ENGLISH BUTTON CLICK
     // ==========================================
+
     else if (e.target.closest('[name="btnEnglish"]')) {
-        
-        
         let combo = document.querySelector('.goog-te-combo');
         if (combo) {
-            combo.value = ''; 
-            combo.selectedIndex = 0;
             
             
+            if (combo.querySelector('option[value=""]') === null) {
+                let defaultOpt = document.createElement('option');
+                defaultOpt.value = "";
+                defaultOpt.text = "Restore";
+                combo.insertBefore(defaultOpt, combo.firstChild);
+            }
+
+            
+            combo.value = '';
             combo.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
             
             
@@ -217,41 +223,21 @@ $(document).ready(function () {
                 evt.initEvent('change', true, true);
                 combo.dispatchEvent(evt);
             }
-            
-            
-            if (window.jQuery) { jQuery('.goog-te-combo').trigger('change'); }
         }
-
         
-        try {
-            let iframe = document.querySelector('iframe.goog-te-banner-frame');
-            if (iframe) {
-                let innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-                let buttons = innerDoc.getElementsByTagName('button');
-                for (let i = 0; i < buttons.length; i++) {
-                    if (buttons[i].id.indexOf('restore') !== -1) {
-                        buttons[i].click();
-                        break;
-                    }
-                }
-            }
-        } catch(err) {
-            // Ignore if CORS blocks it
-        }
-
+        
+        document.body.style.direction = 'ltr';
+        document.body.style.textAlign = 'left';
+        document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
+        
+        
         setTimeout(function() {
-            
-            document.body.style.direction = 'ltr';
-            document.body.style.textAlign = 'left';
-            document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
-            
-            let host = location.hostname;
-            let baseDomain = host.includes('.') ? "." + host.split('.').slice(-2).join('.') : host;
-            
+            var host = location.hostname;
+            var baseDomain = host.includes('.') ? "." + host.split('.').slice(-2).join('.') : host;
             document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + baseDomain;
             document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + host;
             document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        }, 1000); 
+        }, 500);
     }
 });
    

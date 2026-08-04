@@ -175,47 +175,84 @@ $(document).ready(function () {
     initGlobalGoogleTranslate();
 
     document.addEventListener('click', function(e) {
-        
-        // Arabic Click
-        if (e.target.closest('[name="btnArabic"]')) {
-            let combo = document.querySelector('.goog-te-combo');
-            if (combo) {
-                combo.value = 'ar';
-                combo.dispatchEvent(new Event('change', { bubbles: true }));
-                document.body.style.direction = 'rtl';
-                document.body.style.textAlign = 'right';
+    
+    // ==========================================
+    // 1. ARABIC BUTTON CLICK
+    // ==========================================
+    if (e.target.closest('[name="btnArabic"]')) {
+        let combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+            combo.value = 'ar';
+            combo.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
+            
+            
+            if (typeof document.createEvent === 'function') {
+                let evt = document.createEvent('HTMLEvents');
+                evt.initEvent('change', true, true);
+                combo.dispatchEvent(evt);
             }
+
+            document.body.style.direction = 'rtl';
+            document.body.style.textAlign = 'right';
         }
+    }
+    
+    // ==========================================
+    // 2. ENGLISH BUTTON CLICK (THE ULTIMATE FIX)
+    // ==========================================
+    else if (e.target.closest('[name="btnEnglish"]')) {
         
-        // English Click
-        else if (e.target.closest('[name="btnEnglish"]')) {
-            let combo = document.querySelector('.goog-te-combo');
-            if (combo) {
-                combo.value = ''; 
-                combo.dispatchEvent(new Event('change', { bubbles: true }));
-                
-                try {
-                    var iframe = document.querySelector('iframe.goog-te-banner-frame');
-                    if (iframe) {
-                        var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-                        var restoreBtn = innerDoc.getElementById(':1.restore');
-                        if (restoreBtn) restoreBtn.click();
+        
+        let combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+            combo.value = ''; 
+            combo.selectedIndex = 0;
+            
+            
+            combo.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
+            
+            
+            if (typeof document.createEvent === 'function') {
+                let evt = document.createEvent('HTMLEvents');
+                evt.initEvent('change', true, true);
+                combo.dispatchEvent(evt);
+            }
+            
+            
+            if (window.jQuery) { jQuery('.goog-te-combo').trigger('change'); }
+        }
+
+        
+        try {
+            let iframe = document.querySelector('iframe.goog-te-banner-frame');
+            if (iframe) {
+                let innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+                let buttons = innerDoc.getElementsByTagName('button');
+                for (let i = 0; i < buttons.length; i++) {
+                    if (buttons[i].id.indexOf('restore') !== -1) {
+                        buttons[i].click();
+                        break;
                     }
-                } catch(err) {}
-                
-                
-                document.body.style.direction = 'ltr';
-                document.body.style.textAlign = 'left';
-                document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
-                
-                setTimeout(function() {
-                    var baseDomain = location.hostname.includes('.') ? "." + location.hostname.split('.').slice(-2).join('.') : location.hostname;
-                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + baseDomain;
-                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
-                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                }, 1000); 
+                }
             }
+        } catch(err) {
+            // Ignore if CORS blocks it
         }
-    });
+
+        setTimeout(function() {
+            
+            document.body.style.direction = 'ltr';
+            document.body.style.textAlign = 'left';
+            document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
+            
+            let host = location.hostname;
+            let baseDomain = host.includes('.') ? "." + host.split('.').slice(-2).join('.') : host;
+            
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + baseDomain;
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + host;
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }, 1000); 
+    }
+});
    
 });

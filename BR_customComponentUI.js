@@ -202,42 +202,24 @@ $(document).ready(function () {
     // ==========================================
 
     else if (e.target.closest('[name="btnEnglish"]')) {
-        let combo = document.querySelector('.goog-te-combo');
-        if (combo) {
-            
-            
-            if (combo.querySelector('option[value=""]') === null) {
-                let defaultOpt = document.createElement('option');
-                defaultOpt.value = "";
-                defaultOpt.text = "Restore";
-                combo.insertBefore(defaultOpt, combo.firstChild);
-            }
-
-            
-            combo.value = '';
-            combo.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
-            
-            
-            if (typeof document.createEvent === 'function') {
-                let evt = document.createEvent('HTMLEvents');
-                evt.initEvent('change', true, true);
-                combo.dispatchEvent(evt);
-            }
-        }
         
-        
+        // 1. Set layout to LTR (Left to Right)
         document.body.style.direction = 'ltr';
         document.body.style.textAlign = 'left';
         document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
+
+        // 2. Remove Translate Cookies if any
+        var host = location.hostname;
+        var baseDomain = host.includes('.') ? "." + host.split('.').slice(-2).join('.') : host;
         
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + baseDomain;
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + host;
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         
+        // 3. Page reload
         setTimeout(function() {
-            var host = location.hostname;
-            var baseDomain = host.includes('.') ? "." + host.split('.').slice(-2).join('.') : host;
-            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + baseDomain;
-            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + host;
-            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        }, 500);
+            window.location.reload(true);
+        }, 100);
     }
 });
    

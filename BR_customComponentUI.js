@@ -147,5 +147,63 @@ $(document).ready(function () {
         }
     });
 }, 500);
+
+    // =========================================================
+    // 3. GOOGLE TRANSLATE LOGIC
+    // =========================================================
+    function initGlobalGoogleTranslate() {
+        if (!document.getElementById('google_translate_element')) {
+            let gtDiv = document.createElement('div');
+            gtDiv.id = 'google_translate_element';
+            gtDiv.style.display = 'none';
+            document.body.appendChild(gtDiv);
+
+            window.googleTranslateElementInit = function() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'ar',
+                    autoDisplay: false
+                }, 'google_translate_element');
+            };
+
+            let gtScript = document.createElement('script');
+            gtScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.body.appendChild(gtScript);
+        }
+    }
+
+    initGlobalGoogleTranslate();
+
+    document.addEventListener('click', function(e) {
+        
+        // Arabic Click
+        if (e.target.closest('[name="btnArabic"]')) {
+            let combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                combo.value = 'ar';
+                combo.dispatchEvent(new Event('change', { bubbles: true }));
+                document.body.style.direction = 'rtl';
+                document.body.style.textAlign = 'right';
+            }
+        }
+        
+        // English Click
+        else if (e.target.closest('[name="btnEnglish"]')) {
+            let combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                combo.selectedIndex = 0;
+                combo.dispatchEvent(new Event('change', { bubbles: true }));
+                document.body.style.direction = 'ltr';
+                document.body.style.textAlign = 'left';
+                document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
+                
+                // EXTRA ADDED: Cookie clear 
+                var baseDomain = location.hostname.includes('.') ? "." + location.hostname.split('.').slice(-2).join('.') : location.hostname;
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + baseDomain;
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            }
+        }
+    });
    
 });

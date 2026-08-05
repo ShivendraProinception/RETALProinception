@@ -174,52 +174,55 @@ $(document).ready(function () {
 
     initGlobalGoogleTranslate();
 
-    document.addEventListener('click', function(e) {
-    
-    // ==========================================
-    // 1. ARABIC BUTTON CLICK
-    // ==========================================
-    if (e.target.closest('[name="btnArabic"]')) {
-        let combo = document.querySelector('.goog-te-combo');
-        if (combo) {
-            combo.value = 'ar';
-            combo.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
-            
-            
-            if (typeof document.createEvent === 'function') {
-                let evt = document.createEvent('HTMLEvents');
-                evt.initEvent('change', true, true);
-                combo.dispatchEvent(evt);
-            }
-
-            document.body.style.direction = 'rtl';
-            document.body.style.textAlign = 'right';
+// ==========================================
+// GLOBAL TRANSLATION FUNCTIONS
+// ==========================================
+window.translateToArabic = function() {
+    let combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+        combo.value = 'ar';
+        combo.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
+        
+        if (typeof document.createEvent === 'function') {
+            let evt = document.createEvent('HTMLEvents');
+            evt.initEvent('change', true, true);
+            combo.dispatchEvent(evt);
         }
+
+        document.body.style.direction = 'rtl';
+        document.body.style.textAlign = 'right';
     }
+};
+
+window.translateToEnglish = function() {
+    // 1. Set layout to LTR (Left to Right)
+    document.body.style.direction = 'ltr';
+    document.body.style.textAlign = 'left';
+    document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
+
+    // 2. Remove Translate Cookies if any
+    var host = location.hostname;
+    var baseDomain = host.includes('.') ? "." + host.split('.').slice(-2).join('.') : host;
     
-    // ==========================================
-    // 2. ENGLISH BUTTON CLICK
-    // ==========================================
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + baseDomain;
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + host;
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    
+    // 3. Page reload
+    setTimeout(function() {
+        window.location.reload(true);
+    }, 100);
+};
 
+// ==========================================
+// EVENT LISTENER FOR MANUAL CLICKS
+// ==========================================
+document.addEventListener('click', function(e) {
+    if (e.target.closest('[name="btnArabic"]')) {
+        window.translateToArabic();
+    } 
     else if (e.target.closest('[name="btnEnglish"]')) {
-        
-        // 1. Set layout to LTR (Left to Right)
-        document.body.style.direction = 'ltr';
-        document.body.style.textAlign = 'left';
-        document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
-
-        // 2. Remove Translate Cookies if any
-        var host = location.hostname;
-        var baseDomain = host.includes('.') ? "." + host.split('.').slice(-2).join('.') : host;
-        
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + baseDomain;
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + host;
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        
-        // 3. Page reload
-        setTimeout(function() {
-            window.location.reload(true);
-        }, 100);
+        window.translateToEnglish();
     }
 });
    

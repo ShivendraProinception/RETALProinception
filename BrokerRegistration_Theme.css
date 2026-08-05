@@ -190,7 +190,6 @@ html body .theme-entry .input-control.hidden {
     margin: 0px 5px !important;
     text-decoration: none !important;
     transition: all 0.3s ease !important;
-    height: stretch !important;
 }
 
 .theme-entry .SFC.SourceCode-Forms-Controls-Web-Label:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {

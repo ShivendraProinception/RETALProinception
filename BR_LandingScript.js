@@ -2,7 +2,10 @@ $(document).ready(function() {
     // 1. Hero Banner & Text Styling
     $('[name="LandingBanner"]').parent().css({"position": "relative"});
     $('[name="LandingBanner"]').css({"padding": "8rem 5rem", "position": "relative", "z-index": "10", "background-color": "transparent"});
-    $('[name="dlbSlogan"]').css({"font-size":"clamp(42px, 6.6vw, 84px)","line-height": "1.02","letter-spacing": "-.01em","overflow":"visible"});
+    $('[name="dlbSlogan"]').css({"line-height": "1.02","letter-spacing": "-.01em","overflow":"visible"});
+    $('[name="dlbSlogan"]').each(function() {
+        this.style.setProperty("font-size", "clamp(42px, 6.6vw, 84px)", "important");
+    });
     $('p.banner-landing').css({"color": "white"}); 
     $('p[name="eyebrow"]').css({"font-size": "12px", "letter-spacing": ".34em", "text-transform": "uppercase"});
     $('p[name="sub"]').css({"font-size":"clamp(15px, 1.5vw, 18px)","line-height" : "1.62", "max-width" : "560px"});

@@ -140,8 +140,8 @@ For all views border radius setting (commented as of now as there might be some 
 }
 
 
-.styling-font,
-span.SFC.SourceCode-Forms-Controls-Web-DataLabel {
+.theme-entry .styling-font,
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-DataLabel {
     font-family: "Favorit", sans-serif !important;
     font-size: 16px !important;
 }

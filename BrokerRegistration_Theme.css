@@ -251,6 +251,15 @@ html body .theme-entry .input-control.hidden {
     display: block !important;
 }
 
+.theme-entry .rfooter  h1,
+.theme-entry .rfooter  h2,
+.theme-entry .rfooter  h3,
+.theme-entry .rfooter  h4 {
+    font-family: var(--font-title) !important;
+    font-weight: normal !important;
+    text-wrap: auto !important;
+}
+
 .theme-entry .rf-top {
     max-width: 1040px !important;
     margin: 0 auto !important;

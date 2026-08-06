@@ -135,7 +135,8 @@ For all views border radius setting (commented as of now as there might be some 
 
 .theme-entry span.button-text,
 .theme-entry span.headerTxt,
-.theme-entry .SourceCodeFormsControlsWorklist span.worklist-grid-column-header-cell-text  {
+.theme-entry .SourceCodeFormsControlsWorklist span.worklist-grid-column-header-cell-text,
+.theme-entry .WatermarkText  {
     font-family: var(--font-body) !important;
 }
 

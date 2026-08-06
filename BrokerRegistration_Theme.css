@@ -116,7 +116,8 @@ For all views border radius setting (commented as of now as there might be some 
 .theme-entry .window-header,
 .theme-entry h1,
 .theme-entry h2,
-.theme-entry h3 {
+.theme-entry h3,
+.theme-entry h4 {
     font-family: var(--font-title), serif !important;
     font-weight: normal !important;
     text-wrap: auto !important;

@@ -132,6 +132,14 @@ For all views border radius setting (commented as of now as there might be some 
     font-family: 'Favorit', sans-serif !important;
 }
 
+
+.theme-entry span.button-text,
+.theme-entry span.headerTxt,
+.theme-entry .SourceCodeFormsControlsWorklist span.worklist-grid-column-header-cell-text  {
+    font-family: var(--font-body) !important;
+}
+
+
 .styling-font,
 span.SFC.SourceCode-Forms-Controls-Web-DataLabel {
     font-family: "Favorit", sans-serif !important;

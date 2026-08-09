@@ -8,7 +8,7 @@ function initGlobalGoogleTranslate() {
         gtDiv.style.display = 'none';
         document.body.appendChild(gtDiv);
 
-        window.googleTranslateElementInit = function() {
+        window.googleTranslateElementInit = function () {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 includedLanguages: 'ar',
@@ -23,56 +23,58 @@ function initGlobalGoogleTranslate() {
 }
 
 function applyCurrentLanguageLayout() {
-let isArabic = document.cookie.includes('googtrans=/en/ar') || document.cookie.includes('googtrans=/auto/ar');
+    let cookieStr = decodeURIComponent(document.cookie);
 
-let btnEnglish = document.querySelector('a[name="btnEnglish"]');
-let btnArabic = document.querySelector('a[name="btnArabic"]');
+    let isArabic = cookieStr.includes('googtrans=/en/ar') || cookieStr.includes('googtrans=/auto/ar');
 
-if (isArabic) {
-    document.body.style.direction = 'rtl';
-    document.body.style.textAlign = 'right';
-    
-    if (btnEnglish) btnEnglish.classList.remove('hidden');
-    if (btnArabic) btnArabic.classList.add('hidden');
-} else {
-    document.body.style.direction = 'ltr';
-    document.body.style.textAlign = 'left';
-    
-    if (btnArabic) btnArabic.classList.remove('hidden');
-    if (btnEnglish) btnEnglish.classList.add('hidden');
-}
+    let btnEnglish = document.querySelector('a[name="btnEnglish"]');
+    let btnArabic = document.querySelector('a[name="btnArabic"]');
+
+    if (isArabic) {
+        document.body.style.setProperty('direction', 'rtl', 'important');
+        document.body.style.setProperty('text-align', 'right', 'important');
+
+        if (btnEnglish) btnEnglish.classList.remove('hidden');
+        if (btnArabic) btnArabic.classList.add('hidden');
+    } else {
+        document.body.style.setProperty('direction', 'ltr', 'important');
+        document.body.style.setProperty('text-align', 'left', 'important');
+
+        if (btnArabic) btnArabic.classList.remove('hidden');
+        if (btnEnglish) btnEnglish.classList.add('hidden');
+    }
 }
 
 // ==========================================
 // GLOBAL TRANSLATION FUNCTIONS
 // ==========================================
-window.translateToArabic = function() {
+window.translateToArabic = function () {
     let combo = document.querySelector('.goog-te-combo');
     if (combo) {
         combo.value = 'ar';
         combo.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
-        
+
         if (typeof document.createEvent === 'function') {
             let evt = document.createEvent('HTMLEvents');
             evt.initEvent('change', true, true);
             combo.dispatchEvent(evt);
         }
     }
-    
-    setTimeout(applyCurrentLanguageLayout, 50); 
+
+    setTimeout(applyCurrentLanguageLayout, 50);
 };
 
-window.translateToEnglish = function() {
+window.translateToEnglish = function () {
     var host = location.hostname;
     var baseDomain = host.includes('.') ? "." + host.split('.').slice(-2).join('.') : host;
-    
+
     document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + baseDomain;
     document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + host;
     document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    
+
     document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
-    
-    setTimeout(function() {
+
+    setTimeout(function () {
         window.location.reload(); // Removed 'true' parameter as it is deprecated in modern browsers
     }, 100);
 };
@@ -158,20 +160,20 @@ $(document).ready(function () {
     // =========================================================
     // setInterval(function() {
     //     var statusLabel = $('span[name="dlbApplicationStatus"]');
-        
+
     //     if (statusLabel.length > 0) {
     //         var rawText = statusLabel.text().trim();
     //         var currentText = rawText.toLowerCase();
     //         var appliedStatus = statusLabel.attr('data-applied-status');
-            
+
     //         // Check if the text is updated and is not empty
     //         if (currentText !== appliedStatus && currentText !== "") {
     //             // Save new status so that status is not repetative
     //             statusLabel.attr('data-applied-status', currentText);
-                
+
     //             // remove old any custom class if added
     //             statusLabel.removeClass('status-ok status-warn status-danger status-suspended');
-                
+
     //             // Based on current text apply correct class
     //             if (currentText == 'submitted' || currentText == 'active' || currentText == 'approved & active') {
     //                 statusLabel.addClass('status-ok');
@@ -189,58 +191,60 @@ $(document).ready(function () {
     //     }
     // }, 500);
 
-    setInterval(function() {
-    $('span[name="dlbApplicationStatus"]').each(function() {
-        
-        var $thisLabel = $(this); 
-        
-        // Is span is empty then no need to proceed
-        if ($thisLabel.length > 0) {
-            var rawText = $thisLabel.text().trim();
-            var currentText = rawText.toLowerCase();
-            var appliedStatus = $thisLabel.attr('data-applied-status');
-            
-            // Check if the text is updated and is not empty
-            if (currentText !== appliedStatus && currentText !== "") {
-                
-                // Save new status so that status is not repetative
-                $thisLabel.attr('data-applied-status', currentText);
-                
-                // remove old any custom class if added
-                $thisLabel.removeClass('status-ok status-warn status-danger status-suspended');
-                
-                // Based on current text apply correct class
-                if (currentText == 'submitted' || currentText == 'active' || currentText == 'approved & active' || currentText == 'approved by retal' || currentText == 'extended by retal') {
-                    $thisLabel.addClass('status-ok');
-                } 
-                else if (currentText == 'expiring soon' || currentText == 'pending approval' || currentText == 'under review by retal') {
-                    $thisLabel.addClass('status-warn');
-                } 
-                else if (currentText == 'rejected' || currentText == 'rejected by retal' || currentText == 'expired' || currentText == 'expired by retal') {
-                    $thisLabel.addClass('status-danger');
-                } 
-                else if (currentText == 'suspended' || currentText == 'e-sign pending' || currentText == 'suspended by retal') {
-                      $thisLabel.addClass('status-suspended');
+    setInterval(function () {
+        $('span[name="dlbApplicationStatus"]').each(function () {
+
+            var $thisLabel = $(this);
+
+            // Is span is empty then no need to proceed
+            if ($thisLabel.length > 0) {
+                var rawText = $thisLabel.text().trim();
+                var currentText = rawText.toLowerCase();
+                var appliedStatus = $thisLabel.attr('data-applied-status');
+
+                // Check if the text is updated and is not empty
+                if (currentText !== appliedStatus && currentText !== "") {
+
+                    // Save new status so that status is not repetative
+                    $thisLabel.attr('data-applied-status', currentText);
+
+                    // remove old any custom class if added
+                    $thisLabel.removeClass('status-ok status-warn status-danger status-suspended');
+
+                    // Based on current text apply correct class
+                    if (currentText == 'submitted' || currentText == 'active' || currentText == 'approved & active' || currentText == 'approved by retal' || currentText == 'extended by retal') {
+                        $thisLabel.addClass('status-ok');
+                    }
+                    else if (currentText == 'expiring soon' || currentText == 'pending approval' || currentText == 'under review by retal') {
+                        $thisLabel.addClass('status-warn');
+                    }
+                    else if (currentText == 'rejected' || currentText == 'rejected by retal' || currentText == 'expired' || currentText == 'expired by retal') {
+                        $thisLabel.addClass('status-danger');
+                    }
+                    else if (currentText == 'suspended' || currentText == 'e-sign pending' || currentText == 'suspended by retal') {
+                        $thisLabel.addClass('status-suspended');
+                    }
                 }
             }
-        }
-    });
-}, 500);
+        });
+    }, 500);
 
 
     initGlobalGoogleTranslate();
-    applyCurrentLanguageLayout();
+    setInterval(function () {
+        applyCurrentLanguageLayout();
+    }, 500);
 
-// ==========================================
-// EVENT LISTENER FOR MANUAL CLICKS
-// ==========================================
-document.addEventListener('click', function(e) {
-    if (e.target.closest('[name="btnArabic"]')) {
-        window.translateToArabic();
-    } 
-    else if (e.target.closest('[name="btnEnglish"]')) {
-        window.translateToEnglish();
-    }
-});
-   
+    // ==========================================
+    // EVENT LISTENER FOR MANUAL CLICKS
+    // ==========================================
+    document.addEventListener('click', function (e) {
+        if (e.target.closest('[name="btnArabic"]')) {
+            window.translateToArabic();
+        }
+        else if (e.target.closest('[name="btnEnglish"]')) {
+            window.translateToEnglish();
+        }
+    });
+
 });

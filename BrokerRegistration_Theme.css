@@ -1247,7 +1247,9 @@ div[name="asideNavigationMenu"] li.node[data-level="1"]>.content .PART-header-cl
 .theme-entry div[name="table_Individual-Local"],
 .theme-entry div[name="table_Individual-International"],
 .theme-entry div[name="table_Company-Local"],
-.theme-entry div[name="table_Company-International"]
+.theme-entry div[name="table_Company-International"],
+.theme-entry div[name="table_AllDocumentsDisplay"]
+
 {
     border-radius: 1rem !important;
 }

@@ -170,7 +170,9 @@ html body .theme-entry a.button.hidden,
 html body .theme-entry a.button[style*="display: none"],
 html body .theme-entry label.radio.hidden,
 html body .theme-entry label.radio[style*="display: none"],
-html body .theme-entry .input-control.hidden {
+html body .theme-entry .input-control.hidden,
+html body .theme-entry .SFC.SourceCode-Forms-Controls-Web-Label.hidden,
+html body .theme-entry span.hidden {
     display: none !important;
 }
 

@@ -243,4 +243,16 @@
     justify-self: baseline !important;
     gap: 12px;
 }
+
+.theme-entry div[name="tblIndividual-Local"],
+.theme-entry div[name="tblIndividual-International"],
+.theme-entry div[name="tblCompany-Local"], 
+.theme-entry div[name="tblCompany-International"]{
+        grid-template-columns: 40% 5% 1fr !important;
+    }
+
+.theme-entry span[name="Data Label notify"]{
+        width: 85vw !important;
+    }
+
 }

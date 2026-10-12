@@ -75,31 +75,6 @@
     font-family: var(--font-body) !important;
 }
 
-
-/*=================================
-For all views border radius setting (commented as of now as there might be some styling issues)
-=====================================*/
-/* 
-    .theme-entry .form .view .innerpanel>.grid,
-    .theme-entry #pgInnerPanel .view .innerpanel>.grid,
-    .theme-entry .form-tabs>.tab-box-body .view .innerpanel>.grid,
-    .theme-entry #pgTabContent .view .innerpanel>.grid,
-    .theme-entry .form .view .innerpanel>.panel,
-    .theme-entry #pgInnerPanel .view .innerpanel>.panel,
-    .theme-entry .form-tabs>.tab-box-body .view .innerpanel>.panel,
-    .theme-entry #pgTabContent .view .innerpanel>.panel,
-    .theme-entry .form .view-canvas>.grid,
-    .theme-entry #pgInnerPanel .view-canvas>.grid,
-    .theme-entry .form-tabs>.tab-box-body .view-canvas>.grid,
-    .theme-entry #pgTabContent .view-canvas>.grid,
-    .theme-entry .form .view-canvas>.panel,
-    .theme-entry #pgInnerPanel .view-canvas>.panel,
-    .theme-entry .form-tabs>.tab-box-body .view-canvas>.panel,
-    .theme-entry #pgTabContent .view-canvas>.panel {
-        border-radius: 12px !important;
-    } */
-
-
 .theme-entry .form {
     padding: 0 !important;
 }

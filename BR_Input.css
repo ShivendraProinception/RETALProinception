@@ -15,7 +15,7 @@
     box-sizing: border-box !important;
     width: 100% !important;
     height: 44px !important; /* Standard Height */
-    transition: all 0.15s ease-in-out !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
     box-shadow: none !important;
     outline: none !important;
     font-family: var(--font-body), Arial, sans-serif !important;

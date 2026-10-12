@@ -36,6 +36,7 @@
     src: url('Fonts/SangBleuKingdom-Regular-WebXL.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 :root {
@@ -234,7 +235,7 @@ html body .theme-entry span.hidden {
     color: var(--color-primary) !important;
     margin-right: 10px !important;
     font-size: 16px;
-    font-family: var(--font-arabic) !important;
+    font-family: var(--font-ar) !important;
     background-color: #ffffff !important;
     border: solid 1px #F3EFED !important;
     border-radius: 0 !important;
@@ -334,15 +335,6 @@ html body .theme-entry span.hidden {
     text-decoration: none !important;
     margin: 0 0 9px !important;
     line-height: 1.5 !important;
-}
-
-.theme-entry .rf-col h4 {
-    font-size: 11.5px !important;
-    letter-spacing: .16em !important;
-    text-transform: uppercase !important;
-    color: rgba(255, 255, 255, .58) !important;
-    margin: 0 0 13px !important;
-    font-weight: 600 !important;
 }
 
 .theme-entry .rf-bot-in {
@@ -523,8 +515,8 @@ html body .theme-entry span.hidden {
    CURRENT ACTIVE STEP (Step 1 by default where user is)
 ------------------------------------------------------ */
 .theme-entry div[name="Progress"] .step-container.selected .step {
-    background-color: var(--retal-primary, #B07946) !important;
-    border-color: var(--retal-primary, #B07946) !important;
+    background-color: var(--color-primary, #B07946) !important;
+    border-color: var(--color-primary, #B07946) !important;
 }
 
 .theme-entry div[name="Progress"] .step-container.selected .step::after {
@@ -683,38 +675,15 @@ html body .theme-entry span.hidden {
 ============================================================*/
 
 .theme-entry span[name="dlbErrorMsg"] {
-    margin: 1rem auto !important;
-    font-weight: Normal !important;
-    font-style: var(--font-body);
-    font-size: 13px !important;
-    background-color: var(--warn-soft) !important;
-    filter: none !important;
-    color: var(--warn-color) !important;
-    padding: 10px !important;
-    border-radius: 1rem !important;
-    width: 100% !important;
-}
-
-[name="dlbErrorMsg"]::before {
-    content: "" !important;
-    display: inline-block !important;
-    width: 16px !important;
-    height: 16px !important;
-    background-color: currentColor !important;
-    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'/><path d='m9 12 2 2 4-4' /></svg>") no-repeat center !important;
-    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'/><path d='m9 12 2 2 4-4' /></svg>") no-repeat center !important;
-}
-
-
-.theme-entry span[name="dlbErrorMsg"] {
     display: flex !important;
     align-items: center !important;
     gap: 6px !important;
     margin: 1rem auto !important;
     font-weight: normal !important;
-    font-family: var(--font-body) !important;
+    font-style: var(--font-body) !important;
     font-size: 13px !important;
     background-color: var(--warn-soft) !important;
+    filter: none !important;
     color: var(--warn-color) !important;
     padding: 10px !important;
     border-radius: 1rem !important;
@@ -732,7 +701,6 @@ html body .theme-entry span.hidden {
     background-color: currentColor !important;
 
     -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path stroke-linecap='round' stroke-linejoin='round' d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'/><path stroke-linecap='round' stroke-linejoin='round' d='m9 12 2 2 4-4' /></svg>") no-repeat center / contain !important;
-
     mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2.5'><path stroke-linecap='round' stroke-linejoin='round' d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'/><path stroke-linecap='round' stroke-linejoin='round' d='m9 12 2 2 4-4' /></svg>") no-repeat center / contain !important;
 }
 
@@ -844,7 +812,6 @@ html body .theme-entry span.hidden {
 /* Overlay*/
 .theme-entry .modalizer {
     background-color: rgba(0, 0, 0, 0.45) !important;
-    backdrop-filter: blur(3px) !important;
 }
 
 
@@ -1254,4 +1221,101 @@ div[name="asideNavigationMenu"] li.node[data-level="1"]>.content .PART-header-cl
 
 {
     border-radius: 1rem !important;
+}
+
+
+/* =========================================================
+   LANDING PAGE BANNER & BUTTON STYLES (Moved from JS for Performance)
+========================================================= */
+
+/* 1. Hero Banner & Text Styling */
+.theme-entry div[name="LandingBanner"] {
+    padding: 8rem 5rem !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background-color: transparent !important;
+}
+
+/* Parent container ko relative banana (JS: parent().css("position": "relative")) */
+.theme-entry .row:has(div[name="LandingBanner"]), 
+.theme-entry .view:has(div[name="LandingBanner"]) {
+    position: relative !important;
+}
+
+.theme-entry span[name="dlbSlogan"] {
+    line-height: 1.02 !important;
+    letter-spacing: -0.01em !important;
+    overflow: visible !important;
+    font-size: clamp(42px, 6.6vw, 84px) !important;
+}
+
+.theme-entry p.banner-landing {
+    color: white !important;
+}
+
+.theme-entry p[name="eyebrow"] {
+    font-size: 12px !important;
+    letter-spacing: 0.34em !important;
+    text-transform: uppercase !important;
+}
+
+.theme-entry p[name="sub"] {
+    font-size: clamp(15px, 1.5vw, 18px) !important;
+    line-height: 1.62 !important;
+    max-width: 560px !important;
+}
+
+/* 2. Background & Veil */
+.theme-entry div.rhero-veil {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    background: linear-gradient(90deg, rgba(45, 29, 21, .6), rgba(45, 29, 21, .12) 58%, transparent 88%), linear-gradient(0deg, rgba(40, 25, 18, .6), transparent 42%) !important;
+    pointer-events: none !important;
+}
+
+/* 3 & 4. Banner Buttons Default & Hover States */
+.theme-entry a[name="btnStartRegistration"] {
+    background-color: white !important;
+    color: var(--color-primary) !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+.theme-entry a[name="btnStartRegistration"]:hover {
+    background-color: #F3E9E3 !important;
+    color: var(--color-primary) !important;
+}
+
+.theme-entry a[name="btnTrackApplication"] {
+    background-color: transparent !important;
+    color: white !important;
+    border-color: white !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+.theme-entry a[name="btnTrackApplication"]:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: white !important;
+}
+
+/* 5 & 6. Cards & Hover States */
+.theme-entry a[name="btnApprovedBrokerSignIn"] {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    transform: translateY(0px) !important;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease !important;
+}
+
+.theme-entry a[name="btnApprovedBrokerSignIn"]:hover {
+    transform: translateY(-2px) !important;
+    border-color: #9E6850 !important;
+}
+
+.theme-entry a[name="btnStartRegistrationCard"] {
+    transform: translateY(0px) !important;
+    transition: transform 0.2s ease !important;
+}
+
+.theme-entry a[name="btnStartRegistrationCard"]:hover {
+    transform: translateY(-2px) !important;
 }

@@ -5,13 +5,13 @@
 
 /* 1. Hide K2 default radio circles */
 
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio > svg,
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) .input-control-img {
+.theme-entry .stack-container.br-card-group label.radio > svg,
+.theme-entry .stack-container.br-card-group .input-control-img {
     display: none !important;
 }
 
 /* 2. Container Flexbox so that cards align side by side*/
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) {
+.theme-entry .stack-container.br-card-group {
     display: flex !important;
     gap: 20px !important;
     flex-direction: row !important;
@@ -19,14 +19,14 @@
 }
 
 /* Both options ko 50%-50% space dena */
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) .stack {
+.theme-entry .stack-container.br-card-group .stack {
     flex: 1 !important;
     width: 50% !important;
     padding: 0 !important;
 }
 
 /* 3. The Card (Clickable Label) Styling */
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio {
+.theme-entry .stack-container.br-card-group label.radio {
     display: block !important;
     border: 1px solid #E6DEDB !important; 
     border-radius: 12px !important;
@@ -43,14 +43,14 @@
 }
 
 /* Hover State */
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio:hover {
+.theme-entry .stack-container.br-card-group label.radio:hover {
     border-color: #9E6850 !important; 
     transform: translateY(-2px) !important;
 }
 
 /* Active / Selected State */
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio.checked,
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio:has(input[type="radio"]:checked) {
+.theme-entry .stack-container.br-card-group label.radio.checked,
+.theme-entry .stack-container.br-card-group label.radio:has(input[type="radio"]:checked) {
     border-color: #9E6850 !important;
     box-shadow: 0 0 0 1px #9E6850 !important; 
     background-color: #F3E9E3 !important; 
@@ -93,13 +93,13 @@
 
 /* Card Icon Hover & Active State Design (Prototype Matching) */
 
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio.checked .radio-icon,
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio:has(input[type="radio"]:checked) .radio-icon {
+.theme-entry .stack-container.br-card-group label.radio.checked .radio-icon,
+.theme-entry .stack-container.br-card-group label.radio:has(input[type="radio"]:checked) .radio-icon {
     background-color: #99614D !important; /* Retal Solid Brown */
     transition: all 0.2s ease-in-out !important;
 }
 
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio.checked .radio-icon svg,
-.theme-entry .stack-container[role="radiogroup"]:has(.radio-card-content) label.radio:has(input[type="radio"]:checked) .radio-icon svg {
+.theme-entry .stack-container.br-card-group label.radio.checked .radio-icon svg,
+.theme-entry .stack-container.br-card-group label.radio:has(input[type="radio"]:checked) .radio-icon svg {
     stroke: #ffffff !important; /* SVG Stroke becomes white */
 }

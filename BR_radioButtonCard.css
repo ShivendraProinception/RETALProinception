@@ -119,3 +119,39 @@
 .theme-entry .stack-container.br-card-group label.radio:has(input[type="radio"]:checked) .radio-icon svg {
     stroke: #ffffff !important;
 }
+
+/*SCROLLBAR FIX FOR NEW K2 RADIO BUTTON DOM */
+
+/* 1. Unlock the main input wrapper */
+.theme-entry .input-control-wrapper.multi-select-outer-panel:has(.br-card-group),
+.theme-entry .input-control-wrapper.multi-select-outer-panel:has(.radio-card-content) {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important; 
+}
+
+/* 2. Unlock the wrapper container */
+.theme-entry .input-control.control-group-container:has(.br-card-group),
+.theme-entry .input-control.control-group-container:has(.radio-card-content) {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* 3. Unlock K2's specific middle section */
+.theme-entry .input-control-m:has(.br-card-group),
+.theme-entry .input-control-m:has(.radio-card-content),
+.theme-entry .input-control-m-c:has(.br-card-group),
+.theme-entry .input-control-m-c:has(.radio-card-content) {
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* 4. Fix card height and margin inside the new multi-select structure */
+.theme-entry .stack-container.br-card-group .multi-select-box-list-item {
+    height: auto !important; /* Let it grow with the card */
+    min-height: 100% !important;
+    overflow: hidden !important; 
+    margin: 0 !important;
+    padding: 0 !important;
+}

@@ -106,7 +106,6 @@ $(document).ready(function () {
                     <p>A person acting as a broker.</p>
                 </div>
             `);
-
             $('label.radio[title="Company"] .input-control-text').html(`
                 <div class="radio-card-content">
                     <div class="radio-icon">
@@ -152,6 +151,7 @@ $(document).ready(function () {
                     <p>Registered outside Saudi Arabia.</p>
                 </div>
             `);
+            console.log("card added done");
         }
     }, 500);
 

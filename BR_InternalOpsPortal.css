@@ -133,55 +133,58 @@ ul.tab-box-tabs li.sidebar-logo {
 }
 
 /* =========================================================
-   2. SELECTED TAB EXACT COLOR FIX
+   2. SELECTED TAB
 ========================================================= */
-ul.tab-box-tabs li.tab-box-tab-selected:not(.sidebar-section-header),
-ul.tab-box-tabs li.selected:not(.sidebar-section-header) {
-    background-color: #a46446 !important; /* Exact color matched from your image */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; /* Thoda depth effect */
+
+/* Target the anchor tag (<a>) that actually gets the 'selected' class */
+ul.tab-box-tabs li a.selected {
+    background-color: #a46446 !important; 
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+}
+
+/* Ensure the SVG icon inside the selected tab turns white */
+ul.tab-box-tabs li a.selected svg {
+    stroke: #ffffff !important;
+}
+
+/* Strip any background from K2's inner wrapper elements for the selected tab */
+ul.tab-box-tabs li a.selected .tab-l,
+ul.tab-box-tabs li a.selected .tab-m,
+ul.tab-box-tabs li a.selected .tab-r,
+ul.tab-box-tabs li a.selected .tab-text {
+    background-color: transparent !important;
+    background-image: none !important;
 }
 
 /* =========================================================
    3. DOUBLE SCROLLBAR KILLER (Fixing UI/UX)
 ========================================================= */
 /* Lock the main browser window scroll */
-body, html {
+/* body, html {
     overflow: hidden !important; 
     margin: 0 !important;
     padding: 0 !important;
-}
+} */
 
 /* Remove K2's default margins that push height beyond 100vh */
-.runtime-content {
+/* .runtime-content {
     margin: 0 !important;
     padding: 0 !important;
     height: 100vh !important;
     overflow: hidden !important;
-}
+} */
 
 /* Allow ONLY the right-side content area to scroll */
-.tab-box-body {
+/*.tab-box-body {
     flex: 1 !important; 
     background-color: #f7f6f2 !important; 
     border: none !important;
     padding: 0 !important;
     margin: 0 !important;
-    height: 100vh !important; /* Fixed height */
-    overflow-y: auto !important; /* Vertical scroll enable */
-    overflow-x: hidden !important; /* Prevent horizontal scroll */
+    height: 100vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
 }
-
-/* Optional: Slim & Modern Scrollbar for the right side */
-.tab-box-body::-webkit-scrollbar {
-    width: 8px;
-}
-.tab-box-body::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-}
-.tab-box-body::-webkit-scrollbar-thumb {
-    background: #c1c1c1; 
-    border-radius: 4px;
-}
-.tab-box-body::-webkit-scrollbar-thumb:hover {
-    background: #a8a8a8; 
-}
+*/

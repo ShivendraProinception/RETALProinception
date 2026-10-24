@@ -18,6 +18,12 @@ $(document).ready(function () {
                 return foundLi;
             }
 
+            if ($tabList.find('.sidebar-logo').length === 0) {
+                var logoHtml = `<li class="sidebar-logo">
+                                    <img src="https://9wy8tsb.onk2.com/Runtime/Image.ashx?ImID=195" alt="RETAL Logo" style="max-width: 150px; height: auto;" />
+                                </li>`;
+                $tabList.prepend(logoHtml);
+            }
             // 1. All Brokers Tab
             var $brokerTab = getTabLiByText("All Brokers");
             if ($brokerTab) {

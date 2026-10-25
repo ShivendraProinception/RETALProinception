@@ -1217,13 +1217,10 @@ div[name="asideNavigationMenu"] li.node[data-level="1"]>.content .PART-header-cl
     border-radius: 0 0 1rem 1rem !important;
 }
 
-.theme-entry div[name="All_Brokers_View"] .grid-column-headers {
-    border-radius: 1rem 1rem 0 0 !important;
-}
-
 .theme-entry div[name="All_Brokers_View"] .grid-column-headers-wrapper {
     padding: 5px !important;
     background: var(--color-primary) !important;
+    border-radius: 1rem 1rem 0 0 !important;
 }
 .theme-entry div[name="All_Brokers_View"] .grid-column-header-text {
     color: white !important;

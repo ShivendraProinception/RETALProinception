@@ -9,6 +9,7 @@
     min-height: 100vh !important;
     border: none !important;
     background: none !important;
+    overflow: hidden !important;
 }
 
 /* 2. Left Sidebar (The UL list of tabs) */

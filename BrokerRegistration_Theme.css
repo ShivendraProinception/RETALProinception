@@ -1223,6 +1223,10 @@ div[name="asideNavigationMenu"] li.node[data-level="1"]>.content .PART-header-cl
 
 .theme-entry div[name="All_Brokers_View"] .grid-column-headers-wrapper {
     padding: 5px !important;
+    background: var(--color-primary) !important;
+}
+.theme-entry div[name="All_Brokers_View"] .grid-column-header-text {
+    color: white !important;
 }
 
 /* View background transparent */

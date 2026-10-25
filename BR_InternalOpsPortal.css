@@ -13,7 +13,7 @@
 
 /* 2. Left Sidebar (The UL list of tabs) */
 .theme-entry ul.tab-box-tabs {
-    flex: 0 0 260px !important; /* Sidebar Width */
+    flex: 0 0 214px !important; /* Sidebar Width */
     background-color: #3d3935 !important;
     display: flex !important;
     flex-direction: column !important;
@@ -22,6 +22,7 @@
     box-sizing: border-box !important;
     border: none !important;
     gap: 4px !important;
+    overflow: hidden !important;
 }
 
 /* 3. Section Headers (Injected via JS - BROKERS, REVIEW, etc.) */
@@ -59,7 +60,6 @@
     font-weight: 500 !important;
     text-decoration: none !important;
     border: none !important;
-    background: transparent !important;
     transition: background-color 0.2s ease !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -157,34 +157,3 @@ ul.tab-box-tabs li a.selected .tab-text {
     background-color: transparent !important;
     background-image: none !important;
 }
-
-/* =========================================================
-   3. DOUBLE SCROLLBAR KILLER (Fixing UI/UX)
-========================================================= */
-/* Lock the main browser window scroll */
-/* body, html {
-    overflow: hidden !important; 
-    margin: 0 !important;
-    padding: 0 !important;
-} */
-
-/* Remove K2's default margins that push height beyond 100vh */
-/* .runtime-content {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 100vh !important;
-    overflow: hidden !important;
-} */
-
-/* Allow ONLY the right-side content area to scroll */
-/*.tab-box-body {
-    flex: 1 !important; 
-    background-color: #f7f6f2 !important; 
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    height: 100vh !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-}
-*/

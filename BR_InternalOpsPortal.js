@@ -1,6 +1,14 @@
 $(document).ready(function () {
 //New code added
     function enhanceNativeTabsToSidebar() {
+
+        $('.tab-box-body .form').each(function() {
+            var $headerView = $(this).find('.view').first();
+            if ($headerView.length > 0 && !$headerView.hasClass('global-top-navbar')) {
+                $headerView.addClass('global-top-navbar');
+            }
+        });
+
         var $tabList = $('ul.tab-box-tabs:not(.sidebar-processed)');
         
         if ($tabList.length > 0) {

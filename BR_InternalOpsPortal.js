@@ -18,16 +18,16 @@ $(document).ready(function () {
                 return foundLi;
             }
 
-            if ($tabList.find('.sidebar-logo').length === 0) {
-                var logoHtml = `<li class="sidebar-logo">
-                                    <img src="https://9wy8tsb.onk2.com/Runtime/Image.ashx?ImID=195" alt="RETAL Logo" style="max-width: 150px; height: auto;" />
-                                </li>`;
-                $tabList.prepend(logoHtml);
-            }
+            // if ($tabList.find('.sidebar-logo').length === 0) {
+            //     var logoHtml = `<li class="sidebar-logo">
+            //                         <img src="https://9wy8tsb.onk2.com/Runtime/Image.ashx?ImID=195" alt="RETAL Logo" style="max-width: 150px; height: auto;" />
+            //                     </li>`;
+            //     $tabList.prepend(logoHtml);
+            // }
             // 1. All Brokers Tab
             var $brokerTab = getTabLiByText("All Brokers");
             if ($brokerTab) {
-                $('<li class="sidebar-section-header">BROKERS</li>').insertBefore($brokerTab);
+                // $('<li class="sidebar-section-header">BROKERS</li>').insertBefore($brokerTab);
                 var icon1 = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-icon" style="margin-right: 12px;"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>`;
                 $brokerTab.find('.tab-text').prepend(icon1);
             }
@@ -35,7 +35,7 @@ $(document).ready(function () {
             // 2. Approvals (Worklist) Tab
             var $reviewTab = getTabLiByText("Approvals (Worklist)");
             if ($reviewTab) {
-                $('<li class="sidebar-section-header" style="margin-top: 24px;">REVIEW</li>').insertBefore($reviewTab);
+                // $('<li class="sidebar-section-header" style="margin-top: 24px;">REVIEW</li>').insertBefore($reviewTab);
                 var icon2 = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-icon" style="margin-right: 12px;"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>`;
                 $reviewTab.find('.tab-text').prepend(icon2);
             }
@@ -43,7 +43,7 @@ $(document).ready(function () {
             // 3. Admin / Configuration Tab
             var $setupTab = getTabLiByText("Admin / Configuration");
             if ($setupTab) {
-                $('<li class="sidebar-section-header" style="margin-top: 24px;">SETUP</li>').insertBefore($setupTab);
+                // $('<li class="sidebar-section-header" style="margin-top: 24px;">SETUP</li>').insertBefore($setupTab);
                 var icon3 = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-icon" style="margin-right: 12px;"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>`;
                 $setupTab.find('.tab-text').prepend(icon3);
             }

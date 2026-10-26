@@ -158,3 +158,10 @@ ul.tab-box-tabs li a.selected .tab-text {
     background-color: transparent !important;
     background-image: none !important;
 }
+
+
+/*Hiding translation buttons hotfix*/
+.theme-entry a[name="btnEnglish"],
+.theme-entry a[name="btnArabic"] {
+    display: none !important;
+}

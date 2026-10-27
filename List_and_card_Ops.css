@@ -796,6 +796,7 @@ body, .theme-entry, .runtime-content, .runtime-view, .panel, .panel-body, .panel
 [name="Dashboard_cards_table"] > .editor-cell {
     position: relative !important;
     cursor: pointer !important;
+    background-color: #ffff !important;
 }
 
 /* 2. Stretch the button's click boundary over the entire card */

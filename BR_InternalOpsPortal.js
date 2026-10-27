@@ -1,8 +1,57 @@
 $(document).ready(function () {
-//New code added
+
+    (function () {
+        var MARKERS = [
+            ['span[name="Ops_cards_style_dlb"]', "pi-has-ops-cards"],
+            ['span[name="MyCustomer_List_Style_dlb"]', "pi-has-mycust-list"]
+        ];
+
+        function sync() {
+            for (var m = 0; m < MARKERS.length; m++) {
+                var sel = MARKERS[m][0];
+                var cls = MARKERS[m][1];
+                var want = [];
+                var nodes = document.querySelectorAll(sel);
+
+                for (var i = 0; i < nodes.length; i++) {
+                    var el = nodes[i].parentElement;
+
+                    while (el && want.indexOf(el) === -1) {
+                        want.push(el);
+                        el = el.parentElement;
+                    }
+                }
+
+                for (var a = 0; a < want.length; a++) {
+                    if (!want[a].classList.contains(cls)) {
+                        want[a].classList.add(cls);
+                    }
+                }
+
+                var stale = document.getElementsByClassName(cls);
+
+                for (var s = stale.length - 1; s >= 0; s--) {
+                    if (want.indexOf(stale[s]) === -1) {
+                        stale[s].classList.remove(cls);
+                    }
+                }
+            }
+        }
+
+        window.piSyncOpsAndMyCustomerMarkers = sync;
+        sync();
+
+        if (window.MutationObserver) {
+            new MutationObserver(sync).observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+        }
+    })();
+    //New code added
     function enhanceNativeTabsToSidebar() {
 
-        $('.tab-box-body .form').each(function() {
+        $('.tab-box-body .form').each(function () {
             var $headerView = $(this).find('.view').first();
             if ($headerView.length > 0 && !$headerView.hasClass('global-top-navbar')) {
                 $headerView.addClass('global-top-navbar');
@@ -10,14 +59,14 @@ $(document).ready(function () {
         });
 
         var $tabList = $('ul.tab-box-tabs:not(.sidebar-processed)');
-        
+
         if ($tabList.length > 0) {
             $tabList.addClass('sidebar-processed'); // Mark as done
 
             // Helper function to find tab by its actual text
             function getTabLiByText(textToFind) {
                 var foundLi = null;
-                $tabList.find('li').each(function() {
+                $tabList.find('li').each(function () {
                     if ($(this).text().trim() === textToFind) {
                         foundLi = $(this);
                         return false; // break loop
@@ -26,13 +75,6 @@ $(document).ready(function () {
                 return foundLi;
             }
 
-            // if ($tabList.find('.sidebar-logo').length === 0) {
-            //     var logoHtml = `<li class="sidebar-logo">
-            //                         <img src="https://9wy8tsb.onk2.com/Runtime/Image.ashx?ImID=195" alt="RETAL Logo" style="max-width: 150px; height: auto;" />
-            //                     </li>`;
-            //     $tabList.prepend(logoHtml);
-            // }
-            // 1. All Brokers Tab
             var $brokerTab = getTabLiByText("All Brokers");
             if ($brokerTab) {
                 // $('<li class="sidebar-section-header">BROKERS</li>').insertBefore($brokerTab);
@@ -60,12 +102,12 @@ $(document).ready(function () {
 
     // Try immediately
     enhanceNativeTabsToSidebar();
-    
+
     // K2 observer fallback
     let domTimer;
     let observer = new MutationObserver(function () {
         clearTimeout(domTimer);
-        domTimer = setTimeout(function() {
+        domTimer = setTimeout(function () {
             enhanceNativeTabsToSidebar();
         }, 150);
     });

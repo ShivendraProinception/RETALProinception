@@ -196,13 +196,13 @@ New MAIN CONTAINER (Pushed down to make room for Header)
 }
 
 
-.theme-entry span[name="lblOperations"] {
+.theme-entry p[name="lblOperations"] {
     font-size: 12px !important;
     color: #a0a0a0 !important;
     margin: 0 !important;
 }
 
-.theme-entry span[name="dlbCurrentUserName"] {
+.theme-entry p[name="dlbCurrentUserName"] {
     font-size: 14px !important;
     font-weight: 700 !important;
     color: #1a1a1a !important;

@@ -346,12 +346,12 @@ body.pi-has-card-style:is(*, span) .grid.pi-has-mycust-list:is(*, span) a[name*=
     font-weight: 400 !important;
 }
 
-.theme-entry .grid .grid-column-header-table,
+/* .theme-entry .grid .grid-column-header-table,
 .theme-entry .grid .grid-column-header-table th,
 .theme-entry .grid .grid-column-header-table td {
     background-color: #f6f1ee !important;
 }
-
+ */
 
 .theme-entry .view.pi-has-header-name .grid-toolbars, 
 .theme-entry .grid.pi-has-header-name .grid-toolbars {

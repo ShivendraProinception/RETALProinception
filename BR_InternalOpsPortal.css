@@ -14,7 +14,7 @@
 
 /* 2. Left Sidebar (The UL list of tabs) */
 .theme-entry ul.tab-box-tabs {
-    flex: 0 0 214px !important; /* Sidebar Width */
+    flex: 0 0 250px !important; /* Sidebar Width */
     background-color: #3d3935 !important;
     display: flex !important;
     flex-direction: column !important;
@@ -193,4 +193,18 @@ New MAIN CONTAINER (Pushed down to make room for Header)
     box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important; /* Halke depth ke liye shadow */
     box-sizing: border-box !important;
     padding-left: 10px !important; 
+}
+
+
+.theme-entry span[name="lblOperations"] {
+    font-size: 12px !important;
+    color: #a0a0a0 !important;
+    margin: 0 !important;
+}
+
+.theme-entry span[name="dlbCurrentUserName"] {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+    margin: 0 !important;
 }

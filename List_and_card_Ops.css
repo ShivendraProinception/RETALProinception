@@ -231,7 +231,8 @@ body.pi-has-card-style:is(*, span) .grid.pi-has-mycust-list:is(*, span) a[name*=
     /* text-align: left !important; */
     font-size: 12px !important;
     font-weight: 700 !important;
-    color: #8C8C8C !important;
+    /* color: #8C8C8C !important; */
+    background: var(--color-primary) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
     box-sizing: border-box !important;
@@ -245,7 +246,7 @@ body.pi-has-card-style:is(*, span) .grid.pi-has-mycust-list:is(*, span) a[name*=
 .view.pi-has-mycust-list:is(*, span) .grid-header-cell-text,
 .grid.pi-has-mycust-list:is(*, span) .grid-column-header-text,
 .grid.pi-has-mycust-list:is(*, span) .grid-column-header-cell-content {
-    color: #8C7C70 !important;
+    color: #ffffff !important;
     margin: 0 !important;
     padding: 0 !important;
     margin-left: 4px !important;

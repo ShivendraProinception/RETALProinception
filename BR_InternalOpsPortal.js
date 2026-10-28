@@ -98,7 +98,7 @@ $(document).ready(function () {
                 $setupTab.find('.tab-text').prepend(icon3);
             }
             // 1. All Customer Offers Tab (Tag/Offer Icon)
-            var $offersTab = getTabLiByText("All Customer Offers");
+            var $offersTab = getTabLiByText("Customer Offers");
             if ($offersTab) {
                 var offersIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="sidebar-icon" style="width: 16px; height: 16px; margin-right: 12px;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>`;
                 $offersTab.find('.tab-text').prepend(offersIcon);

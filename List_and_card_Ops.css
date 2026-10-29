@@ -993,3 +993,25 @@ body, .theme-entry, .runtime-content, .runtime-view, .panel, .panel-body, .panel
     }
 }
 
+.view.pi-has-mycust-list .grid-toolbars [name*="Table search" i],
+.view.pi-has-mycust-list .grid-toolbars [title*="Table search" i],
+.grid.pi-has-mycust-list .grid-toolbars [name*="Table search" i],
+.grid.pi-has-mycust-list .grid-toolbars [title*="Table search" i] {
+    margin-bottom: -18px !important;
+    margin-top: -10px !important;
+    margin-left: -10px !important;
+}
+/* Make only the view containing "Configuration Type Label" transparent */
+.view:has([name="Configuration Type Label"]),
+.view:has([name="Configuration Type Label"]) .innerpanel,
+.view:has([name="Configuration Type Label"]) .panel,
+.view:has([name="Configuration Type Label"]) .panel-body,
+.view:has([name="Configuration Type Label"]) [class^="panel-body-"],
+.view:has([name="Configuration Type Label"]) .panel-body-wrapper,
+.view:has([name="Configuration Type Label"]) .root-table,
+.view:has([name="Configuration Type Label"]) .editor-cell {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+

@@ -7,7 +7,7 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
     width: 99% !important;
-    margin-left: 1rem !important;
+    margin-left: 5px !important;
 }
 
 .view.pi-has-mycust-list:is(*, span) .grid,
@@ -422,7 +422,7 @@ body.pi-has-card-style:is(*, span) .grid.pi-has-mycust-list:is(*, span) .grid-to
 
 .theme-entry .form .row { margin: 0 !important; }
 .theme-entry .form .row > .view > * { margin: 0 !important; }
-.theme-entry .form .view { margin: 0 !important; padding: 0 !important; }
+/* .theme-entry .form .view { margin: 0 !important; padding: 0 !important; } */
 .runtime-content { margin-top: -18px !important; }
 body, .theme-entry, .runtime-content, .runtime-view, .panel, .panel-body, .panel-body-wrapper, .scroll-contents {
     /* background-color: #F8F6F2 !important; */

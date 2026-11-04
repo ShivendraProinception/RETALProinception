@@ -1015,3 +1015,353 @@ body, .theme-entry, .runtime-content, .runtime-view, .panel, .panel-body, .panel
     background-image: none !important;
 }
 
+
+
+/* ==========================================================================
+
+   K2 THEME ENTRY - MESSAGE & WARNING POPUPS
+
+   Scope: K2 popup dialogs containing a *-message class
+
+   Covers: Default, Confirmation, Error, Info, Warning, None and future types
+
+   Default K2 icons and internal message layout remain untouched.
+
+   ========================================================================== */
+
+
+/* ---- 1. Common popup configuration -------------------------------------- */
+
+.theme-entry .popup.dialog[class*="-message"] {
+
+    --pp-width: 440px;
+
+    --pp-brand: #a6603e;
+
+    --pp-brand-hover: #8f4f31;
+
+    --pp-brand-dark: #5c2e14;
+
+    --pp-btn-border: #c9a594;
+
+    --pp-divider: #efe5de;
+
+    --pp-text: #55504b;
+
+    --pp-header-bg: #f6f2ed;
+
+    --pp-header-text: #1f1b17;
+
+    background: #ffffff !important;
+
+    border: 1px solid #eadbd2 !important;
+
+    border-radius: 16px !important;
+
+    overflow: hidden !important;
+
+    box-shadow:
+
+        0 24px 60px rgba(92, 46, 20, 0.20),
+
+        0 4px 12px rgba(92, 46, 20, 0.08) !important;
+
+}
+
+
+/* ---- 2. Warning popup width adjustment ---------------------------------- */
+
+/* Only applies to the original small warning popup.
+
+   K2 calculates its initial position using a 320px width. */
+
+.theme-entry .popup.warning-message.simple-message-content.runtime-message.size-small {
+
+    width: var(--pp-width) !important;
+
+    margin-left: calc((320px - var(--pp-width)) / 2) !important;
+
+}
+
+
+/* ---- 3. Header ----------------------------------------------------------- */
+
+.theme-entry .popup.dialog[class*="-message"] .popup-header,
+
+.theme-entry .popup.dialog[class*="-message"] .popup-header-l,
+
+.theme-entry .popup.dialog[class*="-message"] .popup-header-c,
+
+.theme-entry .popup.dialog[class*="-message"] .popup-header-r,
+
+.theme-entry .popup.dialog[class*="-message"] .popup-header-wrapper,
+
+.theme-entry .popup.dialog[class*="-message"] .popup-header-wrapper .wrapper {
+
+    background: var(--pp-header-bg) !important;
+
+}
+
+.theme-entry .popup.dialog[class*="-message"] .popup-header {
+
+    box-shadow:
+
+        -40px 0 0 var(--pp-header-bg),
+
+        40px 0 0 var(--pp-header-bg) !important;
+
+}
+
+.theme-entry .popup.dialog[class*="-message"] .popup-header-text {
+
+    color: var(--pp-header-text) !important;
+
+    font-size: 17px !important;
+
+    font-weight: 600 !important;
+
+}
+
+
+/* ---- 4. Body ------------------------------------------------------------- */
+
+/* Preserve all K2 internal icon, panel and message positioning. */
+
+.theme-entry .popup.dialog[class*="-message"] .popup-body-l,
+
+.theme-entry .popup.dialog[class*="-message"] .popup-body-r,
+
+.theme-entry .popup.dialog[class*="-message"] .popup-footer-l,
+
+.theme-entry .popup.dialog[class*="-message"] .popup-footer-r {
+
+    display: none !important;
+
+}
+
+.theme-entry .popup.dialog[class*="-message"] .popup-body,
+
+.theme-entry .popup.dialog[class*="-message"] .popup-body-c,
+
+.theme-entry .popup.dialog[class*="-message"] .popup-body-content {
+
+    background: #ffffff !important;
+
+}
+
+.theme-entry .popup.dialog[class*="-message"] .lyt-messagebox-layout .message {
+
+    font-size: 15px !important;
+
+    line-height: 1.55 !important;
+
+    font-weight: 400 !important;
+
+    color: var(--pp-text) !important;
+
+}
+
+
+/* ---- 5. Footer ------------------------------------------------------------ */
+
+.theme-entry .popup.dialog[class*="-message"] .popup-footer {
+
+    height: auto !important;
+
+    background: #ffffff !important;
+
+    border-top: 1px solid var(--pp-divider) !important;
+
+}
+
+.theme-entry .popup.dialog[class*="-message"] .popup-footer-c {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: flex-end !important;
+
+    gap: 12px !important;
+
+    margin: 0 !important;
+
+    padding: 14px 20px !important;
+
+    background: #ffffff !important;
+
+}
+
+
+/* ---- 6. Default buttons - secondary ------------------------------------- */
+
+/* Cancel, No, Close and other secondary actions. */
+
+.theme-entry .popup.dialog[class*="-message"] .popup-footer a.button {
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+
+    float: none !important;
+
+    min-width: 0 !important;
+
+    height: 40px !important;
+
+    margin: 0 !important;
+
+    padding: 0 24px !important;
+
+    font-size: 15px !important;
+
+    font-weight: 600 !important;
+
+    line-height: 1 !important;
+
+    text-decoration: none !important;
+
+    cursor: pointer !important;
+
+    background: #ffffff !important;
+
+    color: var(--pp-brand-dark) !important;
+
+    border: 1.5px solid var(--pp-btn-border) !important;
+
+    border-radius: 8px !important;
+
+    box-shadow: none !important;
+
+    transition:
+
+        background-color 0.15s ease,
+
+        border-color 0.15s ease,
+
+        color 0.15s ease !important;
+
+}
+
+.theme-entry .popup.dialog[class*="-message"] .popup-footer a.button:hover {
+
+    background: #faf5f1 !important;
+
+    border-color: var(--pp-brand) !important;
+
+}
+
+
+/* ---- 7. Primary buttons - OK / Yes -------------------------------------- */
+
+.theme-entry .popup.dialog[class*="-message"] .popup-footer a.button[id^="messageBoxButton_OK"],
+
+.theme-entry .popup.dialog[class*="-message"] .popup-footer a.button[id^="messageBoxButton_Yes"],
+
+.theme-entry .popup.dialog.confirmation-message .popup-footer a.button:first-of-type {
+
+    order: 2 !important;
+
+    background: var(--pp-brand) !important;
+
+    border-color: var(--pp-brand) !important;
+
+    color: #ffffff !important;
+
+    margin-right: 18px !important;
+
+}
+
+.theme-entry .popup.dialog[class*="-message"] .popup-footer a.button[id^="messageBoxButton_OK"]:hover,
+
+.theme-entry .popup.dialog[class*="-message"] .popup-footer a.button[id^="messageBoxButton_Yes"]:hover,
+
+.theme-entry .popup.dialog.confirmation-message .popup-footer a.button:first-of-type:hover {
+
+    background: var(--pp-brand-hover) !important;
+
+    border-color: var(--pp-brand-hover) !important;
+
+}
+
+
+/* ---- 8. Cancel buttons in other K2 popups ------------------------------- */
+
+/* Targets Cancel buttons when K2 exposes their identity through
+
+   an ID, class, title or accessibility label.
+
+   Does not affect ordinary form buttons. */
+
+.theme-entry .popup .popup-footer a.button[id*="cancel" i],
+
+.theme-entry .popup .popup-footer a.button[class*="cancel" i],
+
+.theme-entry .popup .popup-footer a.button[title*="cancel" i],
+
+.theme-entry .popup .popup-footer a.button[aria-label*="cancel" i] {
+
+    background: #ffffff !important;
+
+    color: var(--pp-brand-dark, #5c2e14) !important;
+
+    border: 1.5px solid var(--pp-btn-border, #c9a594) !important;
+
+    border-radius: 8px !important;
+
+    box-shadow: none !important;
+
+}
+
+.theme-entry .popup .popup-footer a.button[id*="cancel" i]:hover,
+
+.theme-entry .popup .popup-footer a.button[class*="cancel" i]:hover,
+
+.theme-entry .popup .popup-footer a.button[title*="cancel" i]:hover,
+
+.theme-entry .popup .popup-footer a.button[aria-label*="cancel" i]:hover {
+
+    background: #faf5f1 !important;
+
+    border-color: var(--pp-brand, #a6603e) !important;
+
+}
+
+
+/* ---- 9. Keyboard focus --------------------------------------------------- */
+
+.theme-entry .popup.dialog[class*="-message"] .popup-footer a.button:focus-visible,
+
+.theme-entry .popup .popup-footer a.button[id*="cancel" i]:focus-visible,
+
+.theme-entry .popup .popup-footer a.button[class*="cancel" i]:focus-visible,
+
+.theme-entry .popup .popup-footer a.button[title*="cancel" i]:focus-visible,
+
+.theme-entry .popup .popup-footer a.button[aria-label*="cancel" i]:focus-visible {
+
+    outline: 2px solid rgba(166, 96, 62, 0.45) !important;
+
+    outline-offset: 2px !important;
+
+}
+
+
+/* ---- 10. Responsive warning popup --------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .theme-entry .popup.warning-message.simple-message-content.runtime-message.size-small {
+
+        width: calc(100vw - 32px) !important;
+
+        margin-left: calc((320px - (100vw - 32px)) / 2) !important;
+
+    }
+
+}
+ 

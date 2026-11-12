@@ -112,27 +112,6 @@ $(document).ready(function () {
         });
     }, 500);
 
-<<<<<<< HEAD
-});
-=======
-
-    initGlobalGoogleTranslate();
-    setInterval(function () {
-        applyCurrentLanguageLayout();
-    }, 500);
-
-    // ==========================================
-    // EVENT LISTENER FOR MANUAL CLICKS
-    // ==========================================
-    document.addEventListener('click', function (e) {
-        if (e.target.closest('[name="btnArabic"]')) {
-            window.translateToArabic();
-        }
-        else if (e.target.closest('[name="btnEnglish"]')) {
-            window.translateToEnglish();
-        }
-    });
-
 });
 
 
@@ -178,4 +157,3 @@ $(document).ready(function () {
 
 })();
 
->>>>>>> ad91cf041f7c70c4fc260a9c157e025fa38c6300

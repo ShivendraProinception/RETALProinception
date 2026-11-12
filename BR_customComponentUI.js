@@ -212,3 +212,141 @@ $(document).ready(function () {
     });
 
 });
+
+
+
+// Below is the code for hiding the tooltip from every form 
+
+
+(function () {
+
+    if (window.__K2_GLOBAL_TOOLTIP_SUPPRESSION__) {
+        return;
+    }
+
+    window.__K2_GLOBAL_TOOLTIP_SUPPRESSION__ = true;
+
+    var TOOLTIP_ATTRIBUTES = [
+        'title',
+        'data-original-title',
+        'data-bs-original-title'
+    ];
+
+    function removeTooltipAttributes(element) {
+
+        if (!element || element.nodeType !== 1) {
+            return;
+        }
+
+        TOOLTIP_ATTRIBUTES.forEach(function (attribute) {
+            if (element.hasAttribute(attribute)) {
+                element.removeAttribute(attribute);
+            }
+        });
+
+    }
+
+    function cleanElement(element) {
+
+        if (!element || element.nodeType !== 1) {
+            return;
+        }
+
+        removeTooltipAttributes(element);
+
+        if (element.querySelectorAll) {
+
+            var children = element.querySelectorAll(
+                '[title], [data-original-title], [data-bs-original-title]'
+            );
+
+            children.forEach(function (child) {
+                removeTooltipAttributes(child);
+            });
+
+        }
+
+    }
+
+    function initializeGlobalTooltipSuppression() {
+
+        cleanElement(document.documentElement);
+
+        var observer = new MutationObserver(function (mutations) {
+
+            mutations.forEach(function (mutation) {
+
+                if (mutation.type === 'attributes') {
+
+                    removeTooltipAttributes(mutation.target);
+
+                }
+
+                if (mutation.type === 'childList') {
+
+                    mutation.addedNodes.forEach(function (node) {
+
+                        cleanElement(node);
+
+                    });
+
+                }
+
+            });
+
+        });
+
+        observer.observe(document.documentElement, {
+            subtree: true,
+            childList: true,
+            attributes: true,
+            attributeFilter: TOOLTIP_ATTRIBUTES
+        });
+
+        document.addEventListener('pointerover', function (event) {
+
+            var element = event.target;
+
+            while (element && element !== document) {
+
+                if (element.nodeType === 1) {
+                    removeTooltipAttributes(element);
+                }
+
+                element = element.parentElement;
+            }
+
+        }, true);
+
+        document.addEventListener('focusin', function (event) {
+
+            var element = event.target;
+
+            while (element && element !== document) {
+
+                if (element.nodeType === 1) {
+                    removeTooltipAttributes(element);
+                }
+
+                element = element.parentElement;
+            }
+
+        }, true);
+
+    }
+
+    if (document.readyState === 'loading') {
+
+        document.addEventListener(
+            'DOMContentLoaded',
+            initializeGlobalTooltipSuppression,
+            { once: true }
+        );
+
+    } else {
+
+        initializeGlobalTooltipSuppression();
+
+    }
+
+})();

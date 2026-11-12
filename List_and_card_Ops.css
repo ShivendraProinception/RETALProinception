@@ -1369,7 +1369,7 @@ body, .theme-entry, .runtime-content, .runtime-view, .panel, .panel-body, .panel
 
 /* 2. Apply the red border to the outermost list item that creates the card block */
 .theme-entry .input-control-wrapper.invalid .multi-select-box-list-item {
-    border: 2px solid #ff0000 !important;
+    border: 1px solid #c34242 !important;
     border-radius: 8px !important; /* Adjust if your gray border is rounder */
     box-sizing: border-box !important;
 }

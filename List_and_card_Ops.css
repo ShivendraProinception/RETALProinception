@@ -1374,3 +1374,9 @@ body, .theme-entry, .runtime-content, .runtime-view, .panel, .panel-body, .panel
     box-sizing: border-box !important;
 }
 
+
+/* Below is the code for minimizing the size of the BR registration header  */
+
+.theme-entry span[name="Header Container"] {
+    padding: 7px 15px !important;
+}
